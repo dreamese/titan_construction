@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#050505">
+  <meta name="description" content="Dreamese Studio — Architecture & Interior Design.">
+  <title>Dreamese Studio — v0.6</title>
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <div class="site-shell" id="siteShell">
+    <header class="topbar">
+      <a class="brand" id="brandLink" href="#projects" aria-label="Quay về Projects">
+        <img class="brand-mark" id="brandLogo" alt="Dreamese Studio logo">
+        <span class="brand-copy">
+          <strong id="brandName"></strong>
+          <small id="brandTagline"></small>
+        </span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="Điều hướng chính"></nav>
+    </header>
+
+    <footer class="site-footer">
+      <div class="footer-contact" id="footerContact"></div>
+      <button class="footer-projects" type="button" data-jump="projects">Projects</button>
+    </footer>
+
+    <main class="page-frame">
+      <div class="main-scroll" id="mainScroll">
+        <section class="page-section about-section" id="about" data-nav="about">
+          <div class="scene-backgrounds" id="aboutBackgrounds" aria-hidden="true"></div>
+          <div class="section-shade" aria-hidden="true"></div>
+          <div class="section-content about-content">
+            <header class="section-heading">
+              <p class="section-eyebrow" id="aboutEyebrow"></p>
+              <h1 id="aboutTitle"></h1>
+              <p class="section-intro" id="aboutIntro"></p>
+            </header>
+            <div class="about-text-list" id="aboutTextList"></div>
+          </div>
+        </section>
+
+        <section class="page-section projects-section" id="projects" data-nav="projects">
+          <div class="projects-label"><span>Projects</span></div>
+          <div class="projects-stage" id="projectsStage" aria-label="Danh sách dự án">
+            <div class="projects-track" id="projectsTrack"></div>
+          </div>
+        </section>
+
+        <section class="page-section service-section" id="service" data-nav="service">
+          <div class="scene-backgrounds" id="serviceBackgrounds" aria-hidden="true"></div>
+          <div class="section-shade" aria-hidden="true"></div>
+          <div class="section-content service-content">
+            <header class="section-heading">
+              <p class="section-eyebrow" id="serviceEyebrow"></p>
+              <h2 id="serviceTitle"></h2>
+            </header>
+            <div class="service-rail" id="serviceRail"></div>
+          </div>
+        </section>
+
+        <section class="page-section media-section" id="media" data-nav="media">
+          <div class="section-content media-content">
+            <header class="section-heading compact-heading">
+              <p class="section-eyebrow" id="mediaEyebrow"></p>
+              <h2 id="mediaTitle"></h2>
+            </header>
+            <div class="media-rail" id="mediaRail" aria-label="Danh sách video mạng xã hội"></div>
+          </div>
+        </section>
+
+        <section class="page-section news-section" id="news" data-nav="news">
+          <div class="section-content news-content">
+            <div class="news-qa-layout">
+              <div class="news-question-column">
+                <header class="section-heading compact-heading">
+                  <p class="section-eyebrow" id="newsEyebrow"></p>
+                  <h2 id="newsTitle"></h2>
+                </header>
+                <div class="news-title-grid" id="newsGrid" aria-label="Danh sách tin tức"></div>
+              </div>
+              <aside class="news-answer-panel" id="newsAnswerPanel" aria-hidden="true" aria-live="polite">
+                <button class="news-answer-close" id="newsAnswerClose" type="button" aria-label="Đóng nội dung tin tức">×</button>
+                <div class="news-answer-empty" id="newsAnswerEmpty">Chọn một tin tức để xem chi tiết</div>
+                <div class="news-answer-content" id="newsAnswerContent" hidden>
+                  <div class="news-answer-image"><img id="newsAnswerImage" alt=""></div>
+                  <article class="news-answer-copy">
+                    <div class="news-answer-meta">
+                      <span id="newsAnswerNumber"></span>
+                      <span id="newsAnswerDate"></span>
+                      <span id="newsAnswerCategory"></span>
+                    </div>
+                    <h3 id="newsAnswerTitle"></h3>
+                    <h4 id="newsAnswerSubtitle"></h4>
+                    <p id="newsAnswerDescription"></p>
+                    <a id="newsAnswerLink" href="#contact">Trao đổi cùng Dreamese →</a>
+                  </article>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <section class="page-section contact-section" id="contact" data-nav="contact">
+          <div class="section-content contact-content">
+            <header class="section-heading compact-heading">
+              <p class="section-eyebrow" id="contactEyebrow"></p>
+              <h2 id="contactTitle"></h2>
+            </header>
+            <div class="contact-card-grid" id="contactGrid"></div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <aside class="overlay media-overlay" id="mediaOverlay" aria-hidden="true">
+    <button class="overlay-close" type="button" data-close-overlay>CLOSE</button>
+    <div class="overlay-media media-player-shell">
+      <iframe id="mediaOverlayPlayer" title="TikTok video player" src="about:blank" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      <img id="mediaOverlayImage" alt="">
+      <p class="media-player-message" id="mediaPlayerMessage">Không thể phát trực tiếp video này. Bạn vẫn có thể mở video trên TikTok.</p>
+    </div>
+    <div class="overlay-copy">
+      <p class="overlay-kicker" id="mediaOverlayKicker"></p>
+      <h2 id="mediaOverlayTitle"></h2>
+      <p id="mediaOverlayDescription"></p>
+      <a id="mediaOverlayLink" href="#" target="_blank" rel="noopener">OPEN VIDEO ↗</a>
+    </div>
+  </aside>
+
+  <script src="js/default-data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>
