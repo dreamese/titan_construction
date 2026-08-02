@@ -32,6 +32,30 @@
     });
   }
 
+  function syncStaleMobileField(item, defaultItem, field) {
+    if (!item || typeof item !== 'object') return;
+    if (!item.mobile || typeof item.mobile !== 'object') item.mobile = {};
+    const desktopValue = item[field];
+    const mobileValue = item.mobile[field];
+    const defaultDesktop = defaultItem?.[field];
+    const defaultMobile = defaultItem?.mobile?.[field] ?? defaultDesktop;
+    const mobileUnset = mobileValue === undefined || mobileValue === null || mobileValue === '';
+    const desktopWasCustomized = desktopValue !== undefined && desktopValue !== defaultDesktop;
+    const mobileStillDefault = mobileValue === defaultMobile;
+    if (mobileUnset || (desktopWasCustomized && mobileStillDefault)) {
+      item.mobile[field] = clone(desktopValue);
+    }
+  }
+
+  function ensureNavigationEntry(navigation, defaults, target, afterTarget = '') {
+    if (!Array.isArray(navigation)) return;
+    if (navigation.some((item) => item?.target === target)) return;
+    const defaultItem = (defaults || []).find((item) => item?.target === target) || { label: target, target };
+    const entry = clone(defaultItem);
+    const afterIndex = navigation.findIndex((item) => item?.target === afterTarget);
+    navigation.splice(afterIndex >= 0 ? afterIndex + 1 : navigation.length, 0, entry);
+  }
+
   function normalizeMediaUrl(value) {
     let href = String(value || '')
       .trim()
@@ -50,7 +74,7 @@
 
   function normalizeV06(config, defaults) {
     const normalized = mergeDeep(clone(defaults), config || {});
-    normalized.version = '0.7.2';
+    normalized.version = '0.7.3';
 
     normalized.brand.browserTitle = normalized.brand.browserTitle || normalized.brand.name || defaults.brand.browserTitle;
     normalized.brand.favicon = normalized.brand.favicon || normalized.brand.logo || defaults.brand.favicon;
@@ -63,19 +87,47 @@
     normalized.brand.mobile.tagline = normalized.brand.tagline;
     normalized.brand.mobile.logo = normalized.brand.logo;
     normalized.brand.mobile.logoLink = normalized.brand.logoLink;
-    (normalized.navigation || []).forEach((item) => copyMobileFields(item, ['label']));
+    if (!Array.isArray(normalized.navigation)) normalized.navigation = [];
+    ensureNavigationEntry(normalized.navigation, defaults.navigation, 'projects', 'about');
+    normalized.navigation.forEach((item) => {
+      copyMobileFields(item, ['label']);
+      if (item.target === 'media') {
+        if (!item.label || /^media$/i.test(item.label)) item.label = 'Blog';
+        if (!item.mobile.label || /^media$/i.test(item.mobile.label)) item.mobile.label = item.label;
+      }
+      if (item.target === 'projects') {
+        if (!item.label) item.label = 'Projects';
+        if (!item.mobile.label) item.mobile.label = item.label;
+      }
+    });
 
     copyMobileFields(normalized.about, ['eyebrow', 'title', 'intro']);
-    (normalized.about?.slides || []).forEach((item) => copyMobileFields(item, ['label', 'title', 'body', 'image', 'link']));
+    (normalized.about?.slides || []).forEach((item, index) => {
+      copyMobileFields(item, ['label', 'title', 'body', 'image', 'link']);
+      syncStaleMobileField(item, defaults.about?.slides?.[index], 'image');
+    });
 
-    (normalized.projects || []).forEach((item) => copyMobileFields(item, ['title', 'subtitle', 'category', 'image', 'description', 'href']));
+    if (!normalized.projectsSection || typeof normalized.projectsSection !== 'object') {
+      normalized.projectsSection = clone(defaults.projectsSection || { eyebrow: 'Projects', title: '' });
+    }
+    copyMobileFields(normalized.projectsSection, ['eyebrow', 'title']);
+    (normalized.projects || []).forEach((item, index) => {
+      copyMobileFields(item, ['title', 'subtitle', 'category', 'image', 'description', 'href']);
+      syncStaleMobileField(item, defaults.projects?.[index], 'image');
+    });
 
     copyMobileFields(normalized.service, ['eyebrow', 'title']);
-    (normalized.service?.items || []).forEach((item) => copyMobileFields(item, ['name', 'summary', 'image', 'href', 'linkLabel']));
+    (normalized.service?.items || []).forEach((item, index) => {
+      copyMobileFields(item, ['name', 'summary', 'image', 'href', 'linkLabel']);
+      syncStaleMobileField(item, defaults.service?.items?.[index], 'image');
+    });
 
     copyMobileFields(normalized.media, ['eyebrow', 'title']);
-    (normalized.media?.items || []).forEach((item) => {
+    if (!normalized.media.eyebrow || /^media$/i.test(normalized.media.eyebrow)) normalized.media.eyebrow = 'Blog';
+    if (!normalized.media.mobile.eyebrow || /^media$/i.test(normalized.media.mobile.eyebrow)) normalized.media.mobile.eyebrow = normalized.media.eyebrow;
+    (normalized.media?.items || []).forEach((item, index) => {
       copyMobileFields(item, ['title', 'label', 'image', 'description', 'url']);
+      syncStaleMobileField(item, defaults.media?.items?.[index], 'image');
       item.url = normalizeMediaUrl(item.url);
       item.mobile.url = normalizeMediaUrl(item.mobile?.url);
       // Tránh trường hợp người dùng đã gắn video Desktop nhưng Mobile vẫn giữ link kênh cũ.
@@ -85,11 +137,17 @@
     });
 
     copyMobileFields(normalized.news, ['eyebrow', 'title']);
-    (normalized.news?.items || []).forEach((item) => copyMobileFields(item, ['date', 'category', 'title', 'subtitle', 'description', 'image', 'href']));
+    (normalized.news?.items || []).forEach((item, index) => {
+      copyMobileFields(item, ['date', 'category', 'title', 'subtitle', 'description', 'image', 'href']);
+      syncStaleMobileField(item, defaults.news?.items?.[index], 'image');
+      if (/^media$/i.test(item.category || '')) item.category = 'Blog';
+      if (/^media$/i.test(item.mobile.category || '')) item.mobile.category = 'Blog';
+    });
 
     copyMobileFields(normalized.contact, ['eyebrow', 'title']);
-    (normalized.contact?.cards || []).forEach((item) => {
+    (normalized.contact?.cards || []).forEach((item, index) => {
       copyMobileFields(item, ['title', 'lines', 'image', 'link', 'linkLabel']);
+      syncStaleMobileField(item, defaults.contact?.cards?.[index], 'image');
       if (item.type !== 'social') return;
 
       if (!Array.isArray(item.socialLinks) || !item.socialLinks.length) {

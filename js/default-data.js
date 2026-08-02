@@ -1,5 +1,5 @@
 window.DREAMESE_DEFAULT_CONFIG = {
-  "version": "0.7.2",
+  "version": "0.7.3",
   "brand": {
     "browserTitle": "DREAMESE STUDIO — Architecture & Interior Design",
     "favicon": "assets/logo/dreamese-mark.png",
@@ -24,23 +24,45 @@ window.DREAMESE_DEFAULT_CONFIG = {
   "navigation": [
     {
       "label": "About Us",
-      "target": "about"
+      "target": "about",
+      "mobile": {
+        "label": "About Us"
+      }
+    },
+    {
+      "label": "Projects",
+      "target": "projects",
+      "mobile": {
+        "label": "Projects"
+      }
     },
     {
       "label": "Service",
-      "target": "service"
+      "target": "service",
+      "mobile": {
+        "label": "Service"
+      }
     },
     {
-      "label": "Media",
-      "target": "media"
+      "label": "Blog",
+      "target": "media",
+      "mobile": {
+        "label": "Blog"
+      }
     },
     {
       "label": "News",
-      "target": "news"
+      "target": "news",
+      "mobile": {
+        "label": "News"
+      }
     },
     {
       "label": "Contact",
-      "target": "contact"
+      "target": "contact",
+      "mobile": {
+        "label": "Contact"
+      }
     }
   ],
   "layout": {
@@ -122,6 +144,14 @@ window.DREAMESE_DEFAULT_CONFIG = {
       "eyebrow": "About Us",
       "title": "Những câu chuyện được kể bằng không gian.",
       "intro": "Mỗi công trình bắt đầu từ con người, thói quen và những ước vọng sống thật."
+    }
+  },
+  "projectsSection": {
+    "eyebrow": "Projects",
+    "title": "",
+    "mobile": {
+      "eyebrow": "Projects",
+      "title": ""
     }
   },
   "projects": [
@@ -333,60 +363,60 @@ window.DREAMESE_DEFAULT_CONFIG = {
     }
   },
   "media": {
-    "eyebrow": "Media",
+    "eyebrow": "Blog",
     "title": "Các video ngắn, góc nhìn công trình và những câu chuyện hậu trường.",
     "items": [
       {
         "title": "TikTok Video 01",
-        "label": "@quoclinh258 / Social Media",
+        "label": "@quoclinh258 / Social / Blog",
         "image": "assets/projects/01-tt-villa.svg",
-        "description": "Video TikTok được gắn thử trực tiếp vào popup Media. Nhấn OPEN VIDEO để mở video gốc.",
+        "description": "Video TikTok được gắn thử trực tiếp vào popup Blog. Nhấn OPEN VIDEO để mở video gốc.",
         "url": "https://www.tiktok.com/@quoclinh258/video/7666387664395963655",
         "mobile": {
           "title": "TikTok Video 01",
-          "label": "@quoclinh258 / Social Media",
+          "label": "@quoclinh258 / Social / Blog",
           "image": "assets/projects/01-tt-villa.svg",
-          "description": "Video TikTok được gắn thử trực tiếp vào popup Media. Nhấn OPEN VIDEO để mở video gốc.",
+          "description": "Video TikTok được gắn thử trực tiếp vào popup Blog. Nhấn OPEN VIDEO để mở video gốc.",
           "url": "https://www.tiktok.com/@quoclinh258/video/7666387664395963655"
         }
       },
       {
         "title": "TikTok Video 02",
-        "label": "@quoclinh258 / Social Media",
+        "label": "@quoclinh258 / Social / Blog",
         "image": "assets/projects/02-thu-dieu.svg",
-        "description": "Video TikTok được gắn thử trực tiếp vào popup Media. Nhấn OPEN VIDEO để mở video gốc.",
+        "description": "Video TikTok được gắn thử trực tiếp vào popup Blog. Nhấn OPEN VIDEO để mở video gốc.",
         "url": "https://www.tiktok.com/@quoclinh258/video/7609638041191238919",
         "mobile": {
           "title": "TikTok Video 02",
-          "label": "@quoclinh258 / Social Media",
+          "label": "@quoclinh258 / Social / Blog",
           "image": "assets/projects/02-thu-dieu.svg",
-          "description": "Video TikTok được gắn thử trực tiếp vào popup Media. Nhấn OPEN VIDEO để mở video gốc.",
+          "description": "Video TikTok được gắn thử trực tiếp vào popup Blog. Nhấn OPEN VIDEO để mở video gốc.",
           "url": "https://www.tiktok.com/@quoclinh258/video/7609638041191238919"
         }
       },
       {
         "title": "TikTok Video 03",
-        "label": "@quoclinh258 / Social Media",
+        "label": "@quoclinh258 / Social / Blog",
         "image": "assets/projects/03-tvt-home.svg",
-        "description": "Video TikTok được gắn thử trực tiếp vào popup Media. Nhấn OPEN VIDEO để mở video gốc.",
+        "description": "Video TikTok được gắn thử trực tiếp vào popup Blog. Nhấn OPEN VIDEO để mở video gốc.",
         "url": "https://www.tiktok.com/@quoclinh258/video/7657872311017688327",
         "mobile": {
           "title": "TikTok Video 03",
-          "label": "@quoclinh258 / Social Media",
+          "label": "@quoclinh258 / Social / Blog",
           "image": "assets/projects/03-tvt-home.svg",
-          "description": "Video TikTok được gắn thử trực tiếp vào popup Media. Nhấn OPEN VIDEO để mở video gốc.",
+          "description": "Video TikTok được gắn thử trực tiếp vào popup Blog. Nhấn OPEN VIDEO để mở video gốc.",
           "url": "https://www.tiktok.com/@quoclinh258/video/7657872311017688327"
         }
       },
       {
         "title": "TikTok Video 04",
-        "label": "@quoclinh258 / Social Media",
+        "label": "@quoclinh258 / Social / Blog",
         "image": "assets/projects/04-breath-villa.svg",
         "description": "Video mạng xã hội của Dreamese Studio. Thay ảnh bìa và đường dẫn trong ứng dụng quản trị.",
         "url": "https://www.tiktok.com/@quoclinh258",
         "mobile": {
           "title": "TikTok Video 04",
-          "label": "@quoclinh258 / Social Media",
+          "label": "@quoclinh258 / Social / Blog",
           "image": "assets/projects/04-breath-villa.svg",
           "description": "Video mạng xã hội của Dreamese Studio. Thay ảnh bìa và đường dẫn trong ứng dụng quản trị.",
           "url": "https://www.tiktok.com/@quoclinh258"
@@ -394,13 +424,13 @@ window.DREAMESE_DEFAULT_CONFIG = {
       },
       {
         "title": "TikTok Video 05",
-        "label": "@quoclinh258 / Social Media",
+        "label": "@quoclinh258 / Social / Blog",
         "image": "assets/projects/05-cu-lao-villa.svg",
         "description": "Video mạng xã hội của Dreamese Studio. Thay ảnh bìa và đường dẫn trong ứng dụng quản trị.",
         "url": "https://www.tiktok.com/@quoclinh258",
         "mobile": {
           "title": "TikTok Video 05",
-          "label": "@quoclinh258 / Social Media",
+          "label": "@quoclinh258 / Social / Blog",
           "image": "assets/projects/05-cu-lao-villa.svg",
           "description": "Video mạng xã hội của Dreamese Studio. Thay ảnh bìa và đường dẫn trong ứng dụng quản trị.",
           "url": "https://www.tiktok.com/@quoclinh258"
@@ -408,13 +438,13 @@ window.DREAMESE_DEFAULT_CONFIG = {
       },
       {
         "title": "TikTok Video 06",
-        "label": "@quoclinh258 / Social Media",
+        "label": "@quoclinh258 / Social / Blog",
         "image": "assets/projects/06-nhuan-home.svg",
         "description": "Video mạng xã hội của Dreamese Studio. Thay ảnh bìa và đường dẫn trong ứng dụng quản trị.",
         "url": "https://www.tiktok.com/@quoclinh258",
         "mobile": {
           "title": "TikTok Video 06",
-          "label": "@quoclinh258 / Social Media",
+          "label": "@quoclinh258 / Social / Blog",
           "image": "assets/projects/06-nhuan-home.svg",
           "description": "Video mạng xã hội của Dreamese Studio. Thay ảnh bìa và đường dẫn trong ứng dụng quản trị.",
           "url": "https://www.tiktok.com/@quoclinh258"
@@ -422,13 +452,13 @@ window.DREAMESE_DEFAULT_CONFIG = {
       },
       {
         "title": "TikTok Video 07",
-        "label": "@quoclinh258 / Social Media",
+        "label": "@quoclinh258 / Social / Blog",
         "image": "assets/projects/07-touch-house.svg",
         "description": "Video mạng xã hội của Dreamese Studio. Thay ảnh bìa và đường dẫn trong ứng dụng quản trị.",
         "url": "https://www.tiktok.com/@quoclinh258",
         "mobile": {
           "title": "TikTok Video 07",
-          "label": "@quoclinh258 / Social Media",
+          "label": "@quoclinh258 / Social / Blog",
           "image": "assets/projects/07-touch-house.svg",
           "description": "Video mạng xã hội của Dreamese Studio. Thay ảnh bìa và đường dẫn trong ứng dụng quản trị.",
           "url": "https://www.tiktok.com/@quoclinh258"
@@ -436,13 +466,13 @@ window.DREAMESE_DEFAULT_CONFIG = {
       },
       {
         "title": "TikTok Video 08",
-        "label": "@quoclinh258 / Social Media",
+        "label": "@quoclinh258 / Social / Blog",
         "image": "assets/projects/08-lavender.svg",
         "description": "Video mạng xã hội của Dreamese Studio. Thay ảnh bìa và đường dẫn trong ứng dụng quản trị.",
         "url": "https://www.tiktok.com/@quoclinh258",
         "mobile": {
           "title": "TikTok Video 08",
-          "label": "@quoclinh258 / Social Media",
+          "label": "@quoclinh258 / Social / Blog",
           "image": "assets/projects/08-lavender.svg",
           "description": "Video mạng xã hội của Dreamese Studio. Thay ảnh bìa và đường dẫn trong ứng dụng quản trị.",
           "url": "https://www.tiktok.com/@quoclinh258"
@@ -450,13 +480,13 @@ window.DREAMESE_DEFAULT_CONFIG = {
       },
       {
         "title": "TikTok Video 09",
-        "label": "@quoclinh258 / Social Media",
+        "label": "@quoclinh258 / Social / Blog",
         "image": "assets/projects/02-thu-dieu.svg",
         "description": "Video mạng xã hội của Dreamese Studio. Thay ảnh bìa và đường dẫn trong ứng dụng quản trị.",
         "url": "https://www.tiktok.com/@quoclinh258",
         "mobile": {
           "title": "TikTok Video 09",
-          "label": "@quoclinh258 / Social Media",
+          "label": "@quoclinh258 / Social / Blog",
           "image": "assets/projects/02-thu-dieu.svg",
           "description": "Video mạng xã hội của Dreamese Studio. Thay ảnh bìa và đường dẫn trong ứng dụng quản trị.",
           "url": "https://www.tiktok.com/@quoclinh258"
@@ -464,13 +494,13 @@ window.DREAMESE_DEFAULT_CONFIG = {
       },
       {
         "title": "TikTok Video 10",
-        "label": "@quoclinh258 / Social Media",
+        "label": "@quoclinh258 / Social / Blog",
         "image": "assets/projects/03-tvt-home.svg",
         "description": "Video mạng xã hội của Dreamese Studio. Thay ảnh bìa và đường dẫn trong ứng dụng quản trị.",
         "url": "https://www.tiktok.com/@quoclinh258",
         "mobile": {
           "title": "TikTok Video 10",
-          "label": "@quoclinh258 / Social Media",
+          "label": "@quoclinh258 / Social / Blog",
           "image": "assets/projects/03-tvt-home.svg",
           "description": "Video mạng xã hội của Dreamese Studio. Thay ảnh bìa và đường dẫn trong ứng dụng quản trị.",
           "url": "https://www.tiktok.com/@quoclinh258"
@@ -478,7 +508,7 @@ window.DREAMESE_DEFAULT_CONFIG = {
       }
     ],
     "mobile": {
-      "eyebrow": "Media",
+      "eyebrow": "Blog",
       "title": "Video, công trình và hậu trường."
     }
   },
@@ -527,7 +557,7 @@ window.DREAMESE_DEFAULT_CONFIG = {
       {
         "number": "03",
         "date": "18.07.2026",
-        "category": "Media",
+        "category": "Blog",
         "title": "Dreamese Studio mở rộng nội dung video ngắn trên TikTok",
         "subtitle": "Những khoảnh khắc của công trình được kể lại bằng chuyển động",
         "description": "Series video mới tập trung vào ánh sáng, vật liệu, chuyển động trong không gian và những câu chuyện hậu trường.",
@@ -539,7 +569,7 @@ window.DREAMESE_DEFAULT_CONFIG = {
           "description": "Series video mới tập trung vào ánh sáng, vật liệu, chuyển động trong không gian và những câu chuyện hậu trường.",
           "image": "assets/projects/03-tvt-home.svg",
           "href": "#media",
-          "category": "Media",
+          "category": "Blog",
           "date": "18.07.2026"
         }
       },

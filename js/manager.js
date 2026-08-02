@@ -35,7 +35,7 @@
     aboutSlide: { label: '00 / Nội dung', title: 'Tiêu đề mới', body: 'Nội dung mới', image: 'assets/projects/01-tt-villa.svg', link: '#' },
     project: { chapter: '00', title: 'Dự án mới', subtitle: 'Mô tả ngắn', category: 'Loại dự án', image: 'assets/projects/01-tt-villa.svg', description: 'Nội dung giới thiệu dự án.', href: '#' },
     service: { number: '00', name: 'Dịch vụ mới', summary: 'Mô tả dịch vụ.', image: 'assets/projects/01-tt-villa.svg', href: '#', linkLabel: 'Xem thêm →' },
-    media: { title: 'Video mới', label: 'TikTok / Social Media', image: 'assets/projects/01-tt-villa.svg', description: 'Mô tả video.', url: 'https://www.tiktok.com/' },
+    media: { title: 'Bài Blog mới', label: 'TikTok / Blog', image: 'assets/projects/01-tt-villa.svg', description: 'Mô tả video.', url: 'https://www.tiktok.com/' },
     news: { number: '00', date: '31.07.2026', category: 'News', title: 'Tiêu đề tin tức mới', subtitle: 'Tiêu đề phụ', description: 'Nội dung chi tiết của bài viết.', image: 'assets/projects/01-tt-villa.svg', href: '#contact' },
     contact: { type: 'info', title: 'Thẻ liên hệ', lines: ['Dòng nội dung 1'], image: '', link: '#', linkLabel: 'Xem thêm →' },
     socialLink: { platform: 'instagram', label: 'Instagram', url: 'https://www.instagram.com/', mobile: { label: 'Instagram', url: 'https://www.instagram.com/' } }
@@ -118,6 +118,41 @@
 
   function devicePath(basePath, key) {
     return editingDevice === 'mobile' ? `${basePath}.mobile.${key}` : `${basePath}.${key}`;
+  }
+
+  function matchingMobilePath(path) {
+    if (!path || path.includes('.mobile.')) return '';
+    const supported = [
+      /^navigation\.\d+\.label$/,
+      /^brand\.(?:name|tagline|logo|logoLink|email|phone|location|socialLabel|socialUrl)$/,
+      /^about\.(?:eyebrow|title|intro)$/,
+      /^about\.slides\.\d+\.(?:label|title|body|image|link)$/,
+      /^projectsSection\.(?:eyebrow|title)$/,
+      /^projects\.\d+\.(?:title|subtitle|category|image|description|href)$/,
+      /^service\.(?:eyebrow|title)$/,
+      /^service\.items\.\d+\.(?:name|summary|image|href|linkLabel)$/,
+      /^media\.(?:eyebrow|title)$/,
+      /^media\.items\.\d+\.(?:title|label|image|description|url)$/,
+      /^news\.(?:eyebrow|title)$/,
+      /^news\.items\.\d+\.(?:date|category|title|subtitle|description|image|href)$/,
+      /^contact\.(?:eyebrow|title)$/,
+      /^contact\.cards\.\d+\.(?:title|lines|image|link|linkLabel)$/,
+      /^contact\.cards\.\d+\.socialLinks\.\d+\.(?:label|url)$/
+    ];
+    if (!supported.some((pattern) => pattern.test(path))) return '';
+    const keys = path.split('.');
+    const fieldName = keys.pop();
+    const parentPath = keys.join('.');
+    return `${parentPath}.mobile.${fieldName}`;
+  }
+
+  function syncDesktopValueToMobile(path, previousValue, nextValue) {
+    const mobilePath = matchingMobilePath(path);
+    if (!mobilePath) return;
+    const mobileValue = getPath(config, mobilePath);
+    const isUnset = mobileValue === undefined || mobileValue === null || mobileValue === '';
+    const stillFollowingDesktop = mobileValue === previousValue;
+    if (isUnset || stillFollowingDesktop) setPath(config, mobilePath, nextValue);
   }
 
   function modeValue(item, key, fallback = '') {
@@ -291,8 +326,12 @@
     )).join('');
 
     return `<div class="editor-panel">
-      ${panelHeading('Projects', 'Nắm vùng trống của toàn bộ thẻ để đổi thứ tự. Chỉ nút Chỉnh sửa mới mở nội dung; kéo thả không tác động trạng thái mở.')}
+      ${panelHeading('Projects')}
       ${deviceModeBanner()}
+      <div class="field-grid">
+        ${deviceField('Nhãn section', 'projectsSection', 'eyebrow')}
+        ${deviceField('Tiêu đề section', 'projectsSection', 'title', { full: true })}
+      </div>
       ${repeaterToolbar('projects', 'Thêm dự án', 'project')}
       <div class="repeater-list project-reorder-list">${items}</div>
     </div>`;
@@ -327,15 +366,15 @@
       modeValue(item, 'title', item.title),
       modeValue(item, 'label', item.label),
       `<div class="field-grid">
-        ${deviceField('Tiêu đề video', `media.items.${index}`, 'title', { full: true })}
-        ${deviceField('Nhãn / Kênh', `media.items.${index}`, 'label')}
-        ${deviceField('Link TikTok / video', `media.items.${index}`, 'url', { help: 'Nên dùng link đầy đủ có dạng tiktok.com/@tenkenh/video/123… Link Desktop sẽ tự đồng bộ sang Mobile nếu Mobile chưa có link riêng.' })}
+        ${deviceField('Tiêu đề bài Blog / video', `media.items.${index}`, 'title', { full: true })}
+        ${deviceField('Nhãn Blog / Kênh', `media.items.${index}`, 'label')}
+        ${deviceField('Link TikTok / trang liên kết', `media.items.${index}`, 'url', { help: 'Nên dùng link đầy đủ có dạng tiktok.com/@tenkenh/video/123… Link Desktop sẽ tự đồng bộ sang Mobile nếu Mobile chưa có link riêng.' })}
         <div class="field full media-link-tools">
           <label>Kiểm tra liên kết</label>
           <button type="button" class="ghost-button" data-test-media-link data-path="${escapeHtml(devicePath(`media.items.${index}`, 'url'))}">Mở thử link video ↗</button>
         </div>
-        ${deviceField('Mô tả popup', `media.items.${index}`, 'description', { type: 'textarea', full: true })}
-        ${deviceImageField('Ảnh bìa video', `media.items.${index}`)}
+        ${deviceField('Mô tả nội dung popup', `media.items.${index}`, 'description', { type: 'textarea', full: true })}
+        ${deviceImageField('Ảnh bìa Blog / video', `media.items.${index}`)}
       </div>`,
       index,
       'media.items',
@@ -343,10 +382,10 @@
     )).join('');
 
     return `<div class="editor-panel">
-      ${panelHeading('Media', 'Có thể thêm nhiều video, kéo toàn bộ thẻ để đổi thứ tự và dùng nút Chỉnh sửa để mở nội dung.')}
+      ${panelHeading('Blog')}
       ${deviceModeBanner()}
       <div class="field-grid">${deviceField('Nhãn section', 'media', 'eyebrow')}${deviceField('Tiêu đề section', 'media', 'title', { full: true })}</div>
-      ${repeaterToolbar('media.items', 'Thêm video', 'media')}
+      ${repeaterToolbar('media.items', 'Thêm bài Blog / video', 'media')}
       <div class="repeater-list project-reorder-list">${items}</div>
     </div>`;
   }
@@ -450,7 +489,7 @@
 
   function renderLayout() {
     return `<div class="editor-panel">
-      ${panelHeading('Kích thước & Font', 'v0.7.2 khóa mỗi section trong đúng một khung nhìn; bạn có thể chỉnh thẻ, khoảng cách và kích thước chữ.')}
+      ${panelHeading('Kích thước & Font', 'v0.7.3 khóa mỗi section trong đúng một khung nhìn; bạn có thể chỉnh thẻ, khoảng cách và kích thước chữ.')}
       <details class="editor-section" open><summary><strong>Chiều cao Header / Footer</strong><span>px</span></summary><div class="editor-section-body"><div class="field-grid">
         ${field('Header desktop', 'layout.headerHeightDesktop', { type: 'range', min: 56, max: 140 })}
         ${field('Footer desktop', 'layout.footerHeightDesktop', { type: 'range', min: 40, max: 140 })}
@@ -461,7 +500,7 @@
       <details class="editor-section" open><summary><strong>Chiều rộng thẻ & Bo góc</strong><span>px</span></summary><div class="editor-section-body"><div class="field-grid">
         ${field('Thẻ dự án', 'layout.projectCardWidth', { type: 'range', min: 200, max: 620 })}
         ${field('Thẻ dịch vụ', 'layout.serviceCardWidth', { type: 'range', min: 240, max: 600 })}
-        ${field('Thẻ Media', 'layout.mediaCardWidth', { type: 'range', min: 180, max: 500 })}
+        ${field('Thẻ Blog', 'layout.mediaCardWidth', { type: 'range', min: 180, max: 500 })}
         ${field('Thẻ Contact', 'layout.contactCardWidth', { type: 'range', min: 240, max: 600 })}
         ${field('Độ bo góc', 'layout.cardRadius', { type: 'range', min: 0, max: 60 })}
         ${field('Chiều cao thẻ Project mobile', 'layout.mobileProjectCardHeight', { type: 'range', min: 150, max: 420 })}
@@ -484,7 +523,7 @@
       ${panelHeading('Sao lưu & Đưa lên hosting', 'Dữ liệu quản trị được lưu trong trình duyệt. Xuất site-config.json để dùng cùng website khi đưa lên hosting.')}
       <div class="backup-card"><h3>Xuất cấu hình website</h3><p>Tải file <strong>site-config.json</strong>, sau đó đặt file này cùng cấp với index.html trên hosting.</p><div class="backup-actions"><button type="button" data-backup-action="export">Xuất site-config.json</button></div></div>
       <div class="backup-card"><h3>Nhập cấu hình</h3><p>Khôi phục dữ liệu từ một file JSON đã xuất trước đó.</p><div class="backup-actions"><label class="ghost-button file-button">Chọn file JSON<input type="file" data-backup-import accept="application/json"></label></div></div>
-      <div class="backup-card"><h3>Khôi phục mặc định</h3><p>Xóa toàn bộ chỉnh sửa đang lưu trong trình duyệt và quay lại dữ liệu ban đầu của v0.7.2.</p><div class="backup-actions"><button type="button" class="danger-button" data-backup-action="reset">Khôi phục mặc định</button></div></div>
+      <div class="backup-card"><h3>Khôi phục mặc định</h3><p>Xóa toàn bộ chỉnh sửa đang lưu trong trình duyệt và quay lại dữ liệu ban đầu của v0.7.3.</p><div class="backup-actions"><button type="button" class="danger-button" data-backup-action="reset">Khôi phục mặc định</button></div></div>
       <div class="backup-card"><h3>Font Charlotte & Caviar</h3><p>Website đã khai báo sẵn hai font. Để đóng gói hoàn chỉnh, đặt UTM_Charlotte.ttf và UTM_Caviar.ttf vào thư mục assets/fonts.</p></div>
     </div>`;
   }
@@ -559,7 +598,9 @@
       reader.onerror = reject;
       reader.readAsDataURL(file);
     });
+    const previousValue = getPath(config, path);
     setPath(config, path, dataUrl);
+    syncDesktopValueToMobile(path, previousValue, dataUrl);
     if (path === 'brand.logo') setPath(config, 'brand.mobile.logo', dataUrl);
     setDirty();
     renderPanelPreservingOpen(openItems);
@@ -864,6 +905,7 @@
         if (input.value !== value) input.value = value;
       }
       setPath(config, path, value);
+      syncDesktopValueToMobile(path, previousValue, value);
 
       if (/^contact\.cards\.\d+\.type$/.test(path)) {
         const openItems = captureOpenItems();
@@ -878,16 +920,6 @@
       const sharedBrandField = path.match(/^brand\.(name|tagline|logoLink)$/);
       if (sharedBrandField) setPath(config, `brand.mobile.${sharedBrandField[1]}`, value);
 
-      // Link video thường giống nhau ở Desktop và Mobile. Khi chỉnh link Desktop,
-      // chỉ đồng bộ sang Mobile nếu Mobile đang trống hoặc vẫn bằng giá trị Desktop cũ.
-      const desktopMediaMatch = path.match(/^media\.items\.(\d+)\.url$/);
-      if (desktopMediaMatch) {
-        const mobilePath = `media.items.${desktopMediaMatch[1]}.mobile.url`;
-        const currentMobileValue = getPath(config, mobilePath);
-        if (!currentMobileValue || currentMobileValue === previousValue) {
-          setPath(config, mobilePath, value);
-        }
-      }
 
       if (input.type === 'range') {
         qa(`[data-path="${CSS.escape(input.dataset.path)}"]`, editor).forEach((peer) => {
@@ -957,7 +989,8 @@
           showToast('Link video chưa hợp lệ.');
           return;
         }
-        window.open(href, '_blank', 'noopener,noreferrer');
+        const opened = window.open(href, '_blank', 'noopener,noreferrer');
+        if (!opened) window.location.href = href;
         return;
       }
 

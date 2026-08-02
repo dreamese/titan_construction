@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" id="siteThemeColor" content="#050505">
   <meta name="description" id="siteDescription" content="Dreamese Studio — Architecture & Interior Design.">
-  <title>Dreamese Studio — v0.7.2</title>
+  <title>Dreamese Studio — v0.7.3</title>
   <link rel="icon" id="siteFavicon" href="assets/logo/dreamese-mark.png">
   <link rel="apple-touch-icon" id="siteAppleTouchIcon" href="assets/logo/dreamese-mark.png">
-  <link rel="stylesheet" href="css/site.css?v=0.7.2">
+  <link rel="stylesheet" href="css/site.css?v=0.7.3">
 </head>
 <body>
   <div class="site-shell" id="siteShell">
@@ -44,7 +44,7 @@
         </section>
 
         <section class="page-section projects-section" id="projects" data-nav="projects">
-          <div class="projects-label"><span>Projects</span></div>
+          <div class="projects-label"><span id="projectsEyebrow"></span><strong id="projectsTitle"></strong></div>
           <div class="projects-stage" id="projectsStage" aria-label="Danh sách dự án">
             <div class="projects-track" id="projectsTrack"></div>
           </div>
@@ -62,13 +62,13 @@
           </div>
         </section>
 
-        <section class="page-section media-section" id="media" data-nav="media">
+        <section class="page-section media-section blog-section" id="media" data-nav="media">
           <div class="section-content media-content">
             <header class="section-heading compact-heading">
               <p class="section-eyebrow" id="mediaEyebrow"></p>
               <h2 id="mediaTitle"></h2>
             </header>
-            <div class="media-rail" id="mediaRail" aria-label="Danh sách video mạng xã hội"></div>
+            <div class="media-rail" id="mediaRail" aria-label="Danh sách bài Blog và video mạng xã hội"></div>
           </div>
         </section>
 
@@ -120,7 +120,7 @@
   <aside class="overlay media-overlay" id="mediaOverlay" aria-hidden="true">
     <button class="overlay-close" type="button" data-close-overlay>CLOSE</button>
     <div class="overlay-media media-player-shell">
-      <iframe id="mediaOverlayPlayer" title="TikTok video player" src="about:blank" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="origin" hidden></iframe>
+      <iframe id="mediaOverlayPlayer" title="Trình phát video TikTok trong Blog" src="about:blank" allow="autoplay; encrypted-media; picture-in-picture; fullscreen; clipboard-write" allowfullscreen referrerpolicy="origin" hidden></iframe>
       <div class="media-player-poster" id="mediaPlayerPoster">
         <img id="mediaOverlayImage" alt="">
         <div class="media-poster-placeholder" id="mediaPosterPlaceholder" hidden>
@@ -139,12 +139,12 @@
       <p class="overlay-kicker" id="mediaOverlayKicker"></p>
       <h2 id="mediaOverlayTitle"></h2>
       <p id="mediaOverlayDescription"></p>
-      <a id="mediaOverlayLink" href="#" target="_blank" rel="noopener">OPEN VIDEO ↗</a>
+      <a id="mediaOverlayLink" href="#" target="_blank" rel="noopener">MỞ VIDEO GỐC ↗</a>
     </div>
   </aside>
 
-  <script src="js/default-data.js?v=0.7.2"></script>
-  <script src="js/store.js?v=0.7.2"></script>
-  <script src="js/site.js?v=0.7.2"></script>
+  <script src="js/default-data.js?v=0.7.3"></script>
+  <script src="js/store.js?v=0.7.3"></script>
+  <script src="js/site.js?v=0.7.3"></script>
 </body>
 </html>
