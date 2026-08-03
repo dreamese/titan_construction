@@ -350,7 +350,7 @@
   ],
   "service": {
     "eyebrow": "Service",
-    "title": "Dịch vụ được tổ chức theo những mức độ đồng hành khác nhau.",
+    "title": "Nhiều hơn 1 sự đồng hành",
     "items": [
       {
         "number": "01",
@@ -415,12 +415,12 @@
     ],
     "mobile": {
       "eyebrow": "Service",
-      "title": "Dịch vụ được tổ chức theo những mức độ đồng hành khác nhau."
+      "title": "Nhiều hơn 1 sự đồng hành"
     }
   },
   "media": {
     "eyebrow": "Blog",
-    "title": "Các video ngắn, góc nhìn công trình và những câu chuyện hậu trường.",
+    "title": "Chia sẻ các góc nhìn công trình và những câu chuyện hậu trường.",
     "items": [
       {
         "title": "TikTok Video 10",
@@ -565,7 +565,7 @@
     ],
     "mobile": {
       "eyebrow": "Blog",
-      "title": "Các video ngắn, góc nhìn công trình và những câu chuyện hậu trường."
+      "title": "Chia sẻ các góc nhìn công trình và những câu chuyện hậu trường."
     }
   },
   "news": {
