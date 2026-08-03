@@ -189,7 +189,7 @@
         "title": "Rustania Homes",
         "subtitle": "Trải nghiệm mới, cuộc sống mới",
         "category": "Biệt thự nghỉ dưỡng",
-        "image": "assets/projects/01-tt-villa.svg",
+        "image": "PROJECTS/RUSTANIA/A_ExC_008.1.png",
         "description": "Nội dung giới thiệu dự án.",
         "href": "https://dreamese.github.io/dreamesestudio/Rustania.html"
       }
@@ -206,7 +206,7 @@
         "title": "Touch House",
         "subtitle": "Điểm chạm của không gian",
         "category": "Nhà ở",
-        "image": "assets/projects/07-touch-house.svg",
+        "image": "PROJECTS/TouchHome/ExC_02.1.png",
         "description": "Vật liệu, ánh sáng và chuyển động giao nhau tại những điểm chạm nhỏ, tạo nên trải nghiệm sống giàu cảm giác.",
         "href": "#"
       }
@@ -223,7 +223,7 @@
         "title": "T&T Villa",
         "subtitle": "Sự tương phản trong ánh nhìn",
         "category": "Biệt thự",
-        "image": "assets/projects/01-tt-villa.svg",
+        "image": "PROJECTS/TT_Villa/ExC_02.1.jpg",
         "description": "Một cấu trúc sống được tổ chức bằng tương phản sáng — tối, đặc — rỗng và những khoảng chuyển tiếp mềm mại.",
         "href": "#"
       }
@@ -240,7 +240,7 @@
         "title": "Nhuận Home",
         "subtitle": "Về nhà",
         "category": "Biệt thự",
-        "image": "assets/projects/06-nhuan-home.svg",
+        "image": "PROJECTS/PN1/PN1_ExC_09.1.png",
         "description": "Một tổ ấm gần gũi, cân bằng giữa công năng, cảm giác thân thuộc và sự tinh giản của kiến trúc đương đại.",
         "href": "#"
       }
@@ -257,7 +257,7 @@
         "title": "TVT Home",
         "subtitle": "Trỗi dậy và bứt phá",
         "category": "Nhà phố",
-        "image": "assets/projects/03-tvt-home.svg",
+        "image": "PROJECTS/TVT_House/F1.jpg",
         "description": "Một ngôi nhà đô thị với những khoảng mở có chủ đích, kết nối nhiều tầng sinh hoạt trong một hình khối cô đọng.",
         "href": "#"
       }
