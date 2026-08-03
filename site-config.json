@@ -106,13 +106,13 @@
         "label": "01 / Câu chuyện",
         "title": "Mọi ý tưởng đều bắt nguồn từ những lần chuyện phiếm",
         "body": "Kiến trúc sư đóng vai trò như những dịch giả, biến những ý tưởng tưởng chừng mơ hồ thành một không gian sống đích thực và có bản sắc riêng.",
-        "image": "assets/uploads/0d72030483379237b52cd429.png",
+        "image": "PROJECTS/TouchHome/ExC_03.1.png",
         "link": "#projects",
         "mobile": {
           "label": "01 / Câu chuyện",
-          "title": "Chúng tôi dịch những mong muốn vô hình thành trải nghiệm không gian có thể chạm tới.",
-          "body": "Kiến trúc sư đóng vai trò như những dịch giả, biến các ước vọng tưởng chừng mơ hồ thành một không gian sống đích thực và có bản sắc riêng.",
-          "image": "assets/uploads/0d72030483379237b52cd429.png",
+          "title": "Mọi ý tưởng đều bắt đầu từ những câu chuyện",
+          "body": "Chúng tôi nắm bắt tâm tư từ những tâm sự nhỏ nhất",
+          "image": "PROJECTS/TouchHome/ExC_02.1.png",
           "link": "#projects"
         }
       },
@@ -120,13 +120,13 @@
         "label": "02 / Lắng nghe",
         "title": "Chúng tôi đề cao sự lắng nghe và thấu cảm",
         "body": "Thay vì mải luyên thuyên về ý đồ thiết kế và cái tôi của nhà thiết kế, việc đồng cảm, lắng nghe và truyền cảm hứng sẽ tạo nên tuyệt tác.",
-        "image": "assets/uploads/8ad222d364a0b3d3764e291e.jpg",
+        "image": "PROJECTS/Lavender/C6.jpg",
         "link": "#contact",
         "mobile": {
           "label": "02 / Lắng nghe",
           "title": "Mỗi dự án bắt đầu bằng việc lắng nghe, quan sát và đặt đúng câu hỏi.",
           "body": "Chúng tôi tôn trọng, trân quý và luôn lắng nghe khách hàng một cách chân thành để mỗi công trình trở thành một chặng đường đáng nhớ.",
-          "image": "assets/uploads/8ad222d364a0b3d3764e291e.jpg",
+          "image": "PROJECTS/Lavender/C6.jpg",
           "link": "#contact"
         }
       },
@@ -134,21 +134,21 @@
         "label": "03 / Đồng hành",
         "title": "Từng bước hiện thực hóa đều được đồng thành và chuẩn hóa",
         "body": "Đội ngũ trẻ trung, chuyên nghiệp và có chuyên môn cao, biến mọi câu chuyện và ý tưởng trở nên chân thật trong từng hình khối",
-        "image": "assets/uploads/9779cc16d5aaf4167a38d8b2.jpg",
+        "image": "PROJECTS/TN_Cottage/TN_ExC_03.jpg",
         "link": "#service",
         "mobile": {
           "label": "03 / Đồng hành",
           "title": "Thiết kế được phát triển xuyên suốt từ ý tưởng đến quá trình hiện thực hóa.",
           "body": "Studio đồng hành ở các mảng kiến trúc, nội thất, visualization và quản lý triển khai để tinh thần thiết kế được giữ nhất quán.",
-          "image": "assets/uploads/9779cc16d5aaf4167a38d8b2.jpg",
+          "image": "PROJECTS/TN_Cottage/TN_ExC_03.jpg",
           "link": "#service"
         }
       }
     ],
     "mobile": {
       "eyebrow": "About Us",
-      "title": "Những câu chuyện được kể bằng không gian.",
-      "intro": "Mỗi công trình bắt đầu từ con người, thói quen và những ước vọng sống thật."
+      "title": "Make your ideas come true",
+      "intro": "Hân hạnh được đồng hành trên chặng đường hiện thực hóa ý tưởng của khách hàng."
     }
   },
   "projectsSection": {
