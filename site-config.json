@@ -110,8 +110,8 @@
         "link": "#projects",
         "mobile": {
           "label": "01 / Câu chuyện",
-          "title": "Chúng tôi dịch những mong muốn vô hình thành trải nghiệm không gian có thể chạm tới.",
-          "body": "Kiến trúc sư đóng vai trò như những dịch giả, biến các ước vọng tưởng chừng mơ hồ thành một không gian sống đích thực và có bản sắc riêng.",
+          "title": "Câu chuyện và tâm tình.",
+          "body": "Chúng tôi nắm bắt tâm tư từ những tâm sự nhỏ nhất",
           "image": "PROJECTS/TouchHome/ExC_03.1.png",
           "link": "#projects"
         }
@@ -124,9 +124,9 @@
         "link": "#contact",
         "mobile": {
           "label": "02 / Lắng nghe",
-          "title": "Chúng tôi đề cao sự lắng nghe và tháu cảm",
-          "body": "Thay vì mải luyên thuyên về ý đồ thiết kế và cái tôi của nhà thiết kế, việc đồng cảm, lắng nghe và truyền cảm hứng sẽ tạo nên tuyệt tác.",
-          "image": "assets/projects/02-thu-dieu.svg",
+          "title": "Lắng nghe và thấu cảm",
+          "body": "Chúng tôi ít nói như 1 cái tôi riêng của thiết kế, chúng tôi lắng nghe và đồng hành trên những thấu cảm.",
+          "image": "PROJECTS/Lavender/C6.jpg",
           "link": "#contact"
         }
       },
@@ -138,9 +138,9 @@
         "link": "#service",
         "mobile": {
           "label": "03 / Đồng hành",
-          "title": "Từng bước hiện thực hóa đều được đồng thành và chuẩn hóa",
-          "body": "Đội ngũ trẻ trung, chuyên nghiệp và có chuyên môn cao, biến mọi câu chuyện và ý tưởng trở nên chân thật trong từng hình khối",
-          "image": "assets/projects/03-tvt-home.svg",
+          "title": "Đồng hành tạo nên những giá trị đích thực",
+          "body": "Chúng tôi có nhiều hơn 1 sự lựa chọn để đồng hành cùng khách hàng.",
+          "image": "PROJECTS/TN_Cottage/TN_ExC_03.jpg",
           "link": "#service"
         }
       }
