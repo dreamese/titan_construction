@@ -1,6 +1,8 @@
 @font-face {
   font-family: 'UTM Caviar';
-  src: local('UTM Caviar'), local('UTM_Caviar'), url('../assets/fonts/UTM_Caviar.ttf') format('truetype');
+  src: url('../css/fonts/UTM_Caviar.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
   font-display: swap;
 }
 
@@ -18,7 +20,7 @@
 }
 
 * { box-sizing: border-box; }
-html, body { margin: 0; height: 100%; background: var(--bg); color: var(--fg); }
+html, body { margin: 0; height: 100%; background: var(--bg); color: var(--fg); font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
 body { overflow: hidden; }
 button, input, textarea, select { font: inherit; }
 button, label { -webkit-tap-highlight-color: transparent; }

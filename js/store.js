@@ -32,6 +32,48 @@
     });
   }
 
+  function forceMobileFields(item, fields) {
+    if (!item || typeof item !== 'object') return;
+    if (!item.mobile || typeof item.mobile !== 'object') item.mobile = {};
+    fields.forEach((field) => {
+      if (item[field] !== undefined) item.mobile[field] = clone(item[field]);
+      else delete item.mobile[field];
+    });
+  }
+
+  function syncSharedContent(config) {
+    forceMobileFields(config.brand, ['name', 'tagline', 'logo', 'logoLink', 'email', 'phone', 'location', 'socialLabel', 'socialUrl']);
+    (config.navigation || []).forEach((item) => forceMobileFields(item, ['label']));
+
+    forceMobileFields(config.projectsSection, ['eyebrow', 'title']);
+    (config.projects || []).forEach((item) => {
+      forceMobileFields(item, ['title', 'subtitle', 'category', 'image', 'description', 'href']);
+    });
+
+    forceMobileFields(config.service, ['eyebrow', 'title']);
+    (config.service?.items || []).forEach((item) => {
+      forceMobileFields(item, ['name', 'summary', 'image', 'href', 'linkLabel']);
+    });
+
+    forceMobileFields(config.media, ['eyebrow', 'title']);
+    (config.media?.items || []).forEach((item) => {
+      forceMobileFields(item, ['title', 'label', 'image', 'description', 'url']);
+    });
+
+    forceMobileFields(config.news, ['eyebrow', 'title']);
+    (config.news?.items || []).forEach((item) => {
+      forceMobileFields(item, ['date', 'category', 'title', 'subtitle', 'description', 'image', 'href']);
+    });
+
+    forceMobileFields(config.contact, ['eyebrow', 'title']);
+    (config.contact?.cards || []).forEach((item) => {
+      forceMobileFields(item, ['title', 'lines', 'image', 'link', 'linkLabel']);
+      (item.socialLinks || []).forEach((social) => forceMobileFields(social, ['label', 'url']));
+    });
+
+    return config;
+  }
+
   function syncStaleMobileField(item, defaultItem, field) {
     if (!item || typeof item !== 'object') return;
     if (!item.mobile || typeof item.mobile !== 'object') item.mobile = {};
@@ -104,7 +146,6 @@
     copyMobileFields(normalized.about, ['eyebrow', 'title', 'intro']);
     (normalized.about?.slides || []).forEach((item, index) => {
       copyMobileFields(item, ['label', 'title', 'body', 'image', 'link']);
-      syncStaleMobileField(item, defaults.about?.slides?.[index], 'image');
     });
 
     if (!normalized.projectsSection || typeof normalized.projectsSection !== 'object') {
@@ -189,6 +230,7 @@
       if (!String(item.mobile?.url || '').includes('/video/')) item.mobile.url = item.url;
     });
 
+    syncSharedContent(normalized);
     return normalized;
   }
 

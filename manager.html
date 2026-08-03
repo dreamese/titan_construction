@@ -6,7 +6,8 @@
   <meta name="theme-color" content="#111111">
   <title>Dreamese Site Manager — v0.7.3</title>
   <link rel="icon" id="managerFavicon" href="assets/logo/dreamese-mark.png">
-  <link rel="stylesheet" href="css/manager.css?v=0.7.3b">
+  <link rel="preload" href="css/fonts/UTM_Caviar.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="css/manager.css?v=0.7.3-fontsync3">
 </head>
 <body>
   <div class="manager-shell">
@@ -21,7 +22,7 @@
           <button type="button" data-edit-device="mobile">Nội dung Mobile</button>
         </div>
         <button type="button" class="ghost-button" id="openWebsite">Mở website</button>
-        <button type="button" class="ghost-button" id="exportConfig">Xuất cấu hình</button>
+        <button type="button" class="ghost-button" id="exportConfig">Sao lưu website</button>
         <label class="ghost-button file-button">Nhập cấu hình<input type="file" id="importConfig" accept="application/json"></label>
         <button type="button" class="primary-button" id="saveConfig">Lưu thay đổi</button>
       </div>
@@ -63,8 +64,8 @@
     </section>
   </div>
 
-  <script src="js/default-data.js?v=0.7.3b"></script>
-  <script src="js/store.js?v=0.7.3b"></script>
-  <script src="js/manager.js?v=0.7.3b"></script>
+  <script src="js/default-data.js?v=0.7.3d"></script>
+  <script src="js/store.js?v=0.7.3d"></script>
+  <script src="js/manager.js?v=0.7.3d"></script>
 </body>
 </html>

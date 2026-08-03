@@ -37,6 +37,8 @@
   let dragProjectStartScrollTop = 0;
   let dragProjectGestureScrolling = false;
   let githubPublishInProgress = false;
+  let backupExportInProgress = false;
+  let backupSourceDirectoryHandle = null;
 
   const templates = {
     navigation: { label: 'Mục mới', target: 'about' },
@@ -124,11 +126,14 @@
   }
 
   function devicePath(basePath, key) {
-    return editingDevice === 'mobile' ? `${basePath}.mobile.${key}` : `${basePath}.${key}`;
+    const allowDeviceOverride = activePanel === 'about';
+    return allowDeviceOverride && editingDevice === 'mobile'
+      ? `${basePath}.mobile.${key}`
+      : `${basePath}.${key}`;
   }
 
   function matchingMobilePath(path) {
-    if (!path || path.includes('.mobile.')) return '';
+    if (!path || path.includes('.mobile.') || /^about(?:\.|$)/.test(path)) return '';
     const supported = [
       /^navigation\.\d+\.label$/,
       /^brand\.(?:name|tagline|logo|logoLink|email|phone|location|socialLabel|socialUrl)$/,
@@ -156,15 +161,12 @@
   function syncDesktopValueToMobile(path, previousValue, nextValue) {
     const mobilePath = matchingMobilePath(path);
     if (!mobilePath) return;
-    const mobileValue = getPath(config, mobilePath);
-    const isUnset = mobileValue === undefined || mobileValue === null || mobileValue === '';
-    const stillFollowingDesktop = mobileValue === previousValue;
-    if (isUnset || stillFollowingDesktop) setPath(config, mobilePath, nextValue);
+    setPath(config, mobilePath, DreameseStore.clone(nextValue));
   }
 
   function modeValue(item, key, fallback = '') {
     if (!item) return fallback;
-    if (editingDevice === 'mobile') {
+    if (activePanel === 'about' && editingDevice === 'mobile') {
       const mobileValue = item.mobile?.[key];
       if (mobileValue !== undefined && mobileValue !== null && mobileValue !== '') return mobileValue;
     }
@@ -173,7 +175,7 @@
 
   function deviceField(label, basePath, key, options = {}) {
     const path = devicePath(basePath, key);
-    const mobileHelp = editingDevice === 'mobile'
+    const mobileHelp = activePanel === 'about' && editingDevice === 'mobile'
       ? 'Đây là nội dung riêng cho mobile. Để trống, website sẽ tự dùng nội dung Desktop.'
       : '';
     const help = [options.help, mobileHelp].filter(Boolean).join(' ');
@@ -181,7 +183,7 @@
   }
 
   function deviceImageField(label, basePath, key = 'image', options = {}) {
-    const mobileHelp = editingDevice === 'mobile'
+    const mobileHelp = activePanel === 'about' && editingDevice === 'mobile'
       ? 'Có thể dùng hình khác riêng cho mobile. Để trống sẽ dùng hình Desktop.'
       : '';
     const help = [options.help, mobileHelp].filter(Boolean).join(' ');
@@ -527,7 +529,8 @@
 
   function renderBackup() {
     return `<div class="editor-panel">
-      ${panelHeading('Sao lưu & Đưa lên hosting', 'Dữ liệu quản trị được lưu trong trình duyệt. Xuất site-config.json để dùng cùng website khi đưa lên hosting.')}
+      ${panelHeading('Sao lưu', '')}
+      <div class="backup-card"><h3>Sao lưu toàn bộ website</h3><div class="backup-actions"><button type="button" data-backup-action="export-site">Xuất bộ HTML, CSS & JS</button></div></div>
       <div class="backup-card"><h3>Xuất cấu hình website</h3><div class="backup-actions"><button type="button" data-backup-action="export">Xuất site-config.json</button></div></div>
       <div class="backup-card"><h3>Nhập cấu hình</h3><div class="backup-actions"><label class="ghost-button file-button">Chọn file JSON<input type="file" data-backup-import accept="application/json"></label></div></div>
       <div class="backup-card"><h3>Khôi phục mặc định</h3><div class="backup-actions"><button type="button" class="danger-button" data-backup-action="reset">Khôi phục mặc định</button></div></div>
@@ -555,6 +558,11 @@
     dirty = value;
     status.textContent = value ? 'Có thay đổi chưa lưu' : 'Đã lưu';
     status.style.color = value ? '#efbf83' : '';
+  }
+
+  function normalizeWorkingConfig() {
+    config = DreameseStore.normalizeV06(config, window.DREAMESE_DEFAULT_CONFIG);
+    return config;
   }
 
   function updateManagerBrandChrome() {
@@ -902,6 +910,364 @@
     return { publishedConfig, uploads: [...uploadMap.values()] };
   }
 
+  function base64ToBytes(base64) {
+    const binary = atob(String(base64 || '').replace(/\s/g, ''));
+    const bytes = new Uint8Array(binary.length);
+    for (let index = 0; index < binary.length; index += 1) bytes[index] = binary.charCodeAt(index);
+    return bytes;
+  }
+
+  function normalizeBackupPath(path) {
+    return String(path || '')
+      .replace(/\\/g, '/')
+      .replace(/^\.\//, '')
+      .replace(/^\/+/, '')
+      .split('/')
+      .filter((part) => part && part !== '.' && part !== '..')
+      .join('/');
+  }
+
+  function localAssetPath(value) {
+    const raw = String(value || '').trim();
+    if (!raw || /^(?:data:|blob:|mailto:|tel:|javascript:|#)/i.test(raw)) return '';
+
+    const isBackupAsset = (path) => /\.(?:avif|bmp|gif|ico|jpe?g|png|svg|webp|woff2?|ttf|otf|mp4|webm|mov)$/i.test(path);
+
+    try {
+      const resolved = new URL(raw, window.location.href);
+      const rootUrl = new URL('./', window.location.href);
+      if (resolved.origin !== rootUrl.origin || !resolved.pathname.startsWith(rootUrl.pathname)) return '';
+      const relative = decodeURIComponent(resolved.pathname.slice(rootUrl.pathname.length));
+      const normalized = normalizeBackupPath(relative);
+      return isBackupAsset(normalized) ? normalized : '';
+    } catch {
+      const normalized = normalizeBackupPath(raw.split(/[?#]/)[0]);
+      return isBackupAsset(normalized) ? normalized : '';
+    }
+  }
+
+  function collectLocalAssetPaths(value, results = new Set()) {
+    if (typeof value === 'string') {
+      const path = localAssetPath(value);
+      if (path) results.add(path);
+      return results;
+    }
+    if (Array.isArray(value)) {
+      value.forEach((item) => collectLocalAssetPaths(item, results));
+      return results;
+    }
+    if (value && typeof value === 'object') {
+      Object.values(value).forEach((item) => collectLocalAssetPaths(item, results));
+    }
+    return results;
+  }
+
+  async function readDirectoryHandleBytes(rootHandle, path) {
+    const parts = normalizeBackupPath(path).split('/').filter(Boolean);
+    if (!parts.length) throw new Error('Đường dẫn file không hợp lệ.');
+    let directory = rootHandle;
+    for (let index = 0; index < parts.length - 1; index += 1) {
+      directory = await directory.getDirectoryHandle(parts[index]);
+    }
+    const fileHandle = await directory.getFileHandle(parts.at(-1));
+    const file = await fileHandle.getFile();
+    return new Uint8Array(await file.arrayBuffer());
+  }
+
+  function chooseBackupFolderFiles() {
+    return new Promise((resolve, reject) => {
+      const input = document.createElement('input');
+      input.type = 'file';
+      input.multiple = true;
+      input.setAttribute('webkitdirectory', '');
+      input.style.display = 'none';
+      document.body.appendChild(input);
+
+      const cleanup = () => input.remove();
+      input.addEventListener('cancel', () => {
+        cleanup();
+        reject(new DOMException('Đã hủy chọn thư mục.', 'AbortError'));
+      }, { once: true });
+      input.addEventListener('change', () => {
+        const selectedFiles = [...(input.files || [])];
+        cleanup();
+        if (!selectedFiles.length) {
+          reject(new DOMException('Đã hủy chọn thư mục.', 'AbortError'));
+          return;
+        }
+        const rootName = String(selectedFiles[0].webkitRelativePath || '').split('/')[0];
+        const files = new Map();
+        selectedFiles.forEach((file) => {
+          const relative = String(file.webkitRelativePath || file.name).replace(`${rootName}/`, '');
+          files.set(normalizeBackupPath(relative), file);
+        });
+        resolve({ kind: 'file-map', files });
+      }, { once: true });
+      input.click();
+    });
+  }
+
+  async function chooseLocalBackupSource() {
+    if (backupSourceDirectoryHandle) return { kind: 'directory-handle', handle: backupSourceDirectoryHandle };
+
+    if (typeof window.showDirectoryPicker === 'function') {
+      try {
+        const handle = await window.showDirectoryPicker({ id: 'chapter-site-backup', mode: 'read' });
+        await readDirectoryHandleBytes(handle, 'index.html');
+        await readDirectoryHandleBytes(handle, 'manager.html');
+        backupSourceDirectoryHandle = handle;
+        return { kind: 'directory-handle', handle };
+      } catch (error) {
+        if (error?.name === 'AbortError') throw error;
+        console.warn('Không thể dùng trình chọn thư mục trực tiếp, chuyển sang chế độ chọn thư mục dự phòng.', error);
+      }
+    }
+
+    const source = await chooseBackupFolderFiles();
+    if (!source.files.has('index.html') || !source.files.has('manager.html')) {
+      throw new Error('Vui lòng chọn đúng thư mục website đang chứa index.html và manager.html.');
+    }
+    return source;
+  }
+
+  async function fetchBackupBytes(path, required = true, source = null) {
+    const cleanPath = normalizeBackupPath(path);
+    try {
+      if (source?.kind === 'directory-handle') {
+        return await readDirectoryHandleBytes(source.handle, cleanPath);
+      }
+      if (source?.kind === 'file-map') {
+        const file = source.files.get(cleanPath);
+        if (!file) throw new Error('Không tìm thấy trong thư mục đã chọn');
+        return new Uint8Array(await file.arrayBuffer());
+      }
+      const separator = cleanPath.includes('?') ? '&' : '?';
+      const response = await fetch(`${cleanPath}${separator}backup=${Date.now()}`, { cache: 'no-store' });
+      if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
+      return new Uint8Array(await response.arrayBuffer());
+    } catch (error) {
+      if (required) throw new Error(`Không thể đọc ${cleanPath}: ${error?.message || error}`);
+      console.warn(`Bỏ qua file không tồn tại trong bản sao lưu: ${cleanPath}`, error);
+      return null;
+    }
+  }
+
+  function concatBytes(parts) {
+    const length = parts.reduce((total, part) => total + part.length, 0);
+    const output = new Uint8Array(length);
+    let offset = 0;
+    parts.forEach((part) => {
+      output.set(part, offset);
+      offset += part.length;
+    });
+    return output;
+  }
+
+  const CRC32_TABLE = (() => {
+    const table = new Uint32Array(256);
+    for (let number = 0; number < 256; number += 1) {
+      let value = number;
+      for (let bit = 0; bit < 8; bit += 1) {
+        value = (value & 1) ? (0xedb88320 ^ (value >>> 1)) : (value >>> 1);
+      }
+      table[number] = value >>> 0;
+    }
+    return table;
+  })();
+
+  function crc32(bytes) {
+    let crc = 0xffffffff;
+    for (let index = 0; index < bytes.length; index += 1) {
+      crc = CRC32_TABLE[(crc ^ bytes[index]) & 0xff] ^ (crc >>> 8);
+    }
+    return (crc ^ 0xffffffff) >>> 0;
+  }
+
+  function dosDateTime(date = new Date()) {
+    const year = Math.max(1980, date.getFullYear());
+    const dosTime = (date.getHours() << 11) | (date.getMinutes() << 5) | Math.floor(date.getSeconds() / 2);
+    const dosDate = ((year - 1980) << 9) | ((date.getMonth() + 1) << 5) | date.getDate();
+    return { dosTime, dosDate };
+  }
+
+  function createZipArchive(fileEntries) {
+    const encoder = new TextEncoder();
+    const localParts = [];
+    const centralParts = [];
+    const createdAt = dosDateTime();
+    let offset = 0;
+
+    fileEntries.forEach(({ path, bytes }) => {
+      const cleanPath = normalizeBackupPath(path);
+      if (!cleanPath) return;
+      const nameBytes = encoder.encode(cleanPath);
+      const data = bytes instanceof Uint8Array ? bytes : new Uint8Array(bytes || []);
+      const checksum = crc32(data);
+
+      const localHeader = new Uint8Array(30 + nameBytes.length);
+      const localView = new DataView(localHeader.buffer);
+      localView.setUint32(0, 0x04034b50, true);
+      localView.setUint16(4, 20, true);
+      localView.setUint16(6, 0x0800, true);
+      localView.setUint16(8, 0, true);
+      localView.setUint16(10, createdAt.dosTime, true);
+      localView.setUint16(12, createdAt.dosDate, true);
+      localView.setUint32(14, checksum, true);
+      localView.setUint32(18, data.length, true);
+      localView.setUint32(22, data.length, true);
+      localView.setUint16(26, nameBytes.length, true);
+      localView.setUint16(28, 0, true);
+      localHeader.set(nameBytes, 30);
+      localParts.push(localHeader, data);
+
+      const centralHeader = new Uint8Array(46 + nameBytes.length);
+      const centralView = new DataView(centralHeader.buffer);
+      centralView.setUint32(0, 0x02014b50, true);
+      centralView.setUint16(4, 20, true);
+      centralView.setUint16(6, 20, true);
+      centralView.setUint16(8, 0x0800, true);
+      centralView.setUint16(10, 0, true);
+      centralView.setUint16(12, createdAt.dosTime, true);
+      centralView.setUint16(14, createdAt.dosDate, true);
+      centralView.setUint32(16, checksum, true);
+      centralView.setUint32(20, data.length, true);
+      centralView.setUint32(24, data.length, true);
+      centralView.setUint16(28, nameBytes.length, true);
+      centralView.setUint16(30, 0, true);
+      centralView.setUint16(32, 0, true);
+      centralView.setUint16(34, 0, true);
+      centralView.setUint16(36, 0, true);
+      centralView.setUint32(38, 0, true);
+      centralView.setUint32(42, offset, true);
+      centralHeader.set(nameBytes, 46);
+      centralParts.push(centralHeader);
+
+      offset += localHeader.length + data.length;
+    });
+
+    const centralDirectory = concatBytes(centralParts);
+    const endRecord = new Uint8Array(22);
+    const endView = new DataView(endRecord.buffer);
+    endView.setUint32(0, 0x06054b50, true);
+    endView.setUint16(4, 0, true);
+    endView.setUint16(6, 0, true);
+    endView.setUint16(8, centralParts.length, true);
+    endView.setUint16(10, centralParts.length, true);
+    endView.setUint32(12, centralDirectory.length, true);
+    endView.setUint32(16, offset, true);
+    endView.setUint16(20, 0, true);
+
+    return concatBytes([...localParts, centralDirectory, endRecord]);
+  }
+
+  function downloadBytes(bytes, filename, type = 'application/octet-stream') {
+    const blob = new Blob([bytes], { type });
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement('a');
+    anchor.href = url;
+    anchor.download = filename;
+    document.body.appendChild(anchor);
+    anchor.click();
+    anchor.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1500);
+  }
+
+  function backupFileName() {
+    const date = new Date();
+    const stamp = [
+      date.getFullYear(),
+      String(date.getMonth() + 1).padStart(2, '0'),
+      String(date.getDate()).padStart(2, '0'),
+      '-',
+      String(date.getHours()).padStart(2, '0'),
+      String(date.getMinutes()).padStart(2, '0')
+    ].join('');
+    return `chapter_site-v0.7.3-backup-${stamp}.zip`;
+  }
+
+  async function exportWebsiteBackup() {
+    if (backupExportInProgress) return;
+    backupExportInProgress = true;
+    const buttons = [q('#exportConfig'), ...qa('[data-backup-action="export-site"]')].filter(Boolean);
+    const labels = buttons.map((button) => button.textContent);
+    buttons.forEach((button) => {
+      button.disabled = true;
+      button.textContent = 'Đang tạo…';
+    });
+
+    try {
+      let backupSource = null;
+      if (window.location.protocol === 'file:') {
+        status.textContent = 'Chọn thư mục website đang mở…';
+        backupSource = await chooseLocalBackupSource();
+      }
+
+      status.textContent = 'Đang chuẩn bị bộ website…';
+      normalizeWorkingConfig();
+      const prepared = await preparePublishedConfig(config);
+      const files = new Map();
+      const requiredSourceFiles = [
+        'index.html',
+        'manager.html',
+        'css/site.css',
+        'css/manager.css',
+        'js/site.js',
+        'js/store.js',
+        'js/manager.js'
+      ];
+
+      for (let index = 0; index < requiredSourceFiles.length; index += 1) {
+        const path = requiredSourceFiles[index];
+        status.textContent = `Đang sao lưu ${index + 1}/${requiredSourceFiles.length}: ${path}`;
+        files.set(path, await fetchBackupBytes(path, true, backupSource));
+      }
+
+      const configJson = JSON.stringify(prepared.publishedConfig, null, 2);
+      files.set('site-config.json', new TextEncoder().encode(configJson));
+      files.set('js/default-data.js', new TextEncoder().encode(`window.DREAMESE_DEFAULT_CONFIG = ${configJson};\n`));
+
+      prepared.uploads.forEach((upload) => {
+        files.set(normalizeBackupPath(upload.path), base64ToBytes(upload.contentBase64));
+      });
+
+      const assetPaths = collectLocalAssetPaths(prepared.publishedConfig);
+      [
+        'assets/logo/dreamese-mark.png',
+        'css/fonts/UTM_Charlotte.ttf',
+        'css/fonts/UTM_Caviar.ttf'
+      ].forEach((path) => assetPaths.add(path));
+
+      let assetIndex = 0;
+      for (const path of assetPaths) {
+        assetIndex += 1;
+        if (files.has(path)) continue;
+        status.textContent = `Đang sao lưu hình ảnh ${assetIndex}/${assetPaths.size}: ${path}`;
+        const bytes = await fetchBackupBytes(path, false, backupSource);
+        if (bytes) files.set(path, bytes);
+      }
+
+      const zipBytes = createZipArchive([...files.entries()].map(([path, bytes]) => ({ path, bytes })));
+      downloadBytes(zipBytes, backupFileName(), 'application/zip');
+      status.textContent = `Đã xuất bộ website gồm ${files.size} file.`;
+      showToast('Đã xuất bộ HTML, CSS, JS và hình ảnh.');
+    } catch (error) {
+      if (error?.name === 'AbortError') {
+        status.textContent = 'Đã hủy sao lưu.';
+        showToast('Đã hủy sao lưu.');
+      } else {
+        console.error(error);
+        status.textContent = `Không thể tạo bản sao lưu: ${error?.message || error}`;
+        showToast('Xuất bộ website thất bại.');
+      }
+    } finally {
+      backupExportInProgress = false;
+      buttons.forEach((button, index) => {
+        button.disabled = false;
+        button.textContent = labels[index];
+      });
+    }
+  }
+
   async function putGitHubFile(connection, path, contentBase64, message, skipIfExists = false) {
     const encodedPath = String(path || '')
       .split('/')
@@ -936,6 +1302,7 @@
   }
 
   async function publishConfigToGitHub(connection) {
+    normalizeWorkingConfig();
     const prepared = await preparePublishedConfig(config);
     const files = [
       ...prepared.uploads,
@@ -969,6 +1336,7 @@
 
     try {
       status.textContent = 'Đang lưu bản dự phòng trên trình duyệt…';
+      normalizeWorkingConfig();
       await DreameseStore.saveConfig(config);
       setDirty(false);
       syncPreview();
@@ -999,6 +1367,7 @@
   }
 
   function exportConfig() {
+    normalizeWorkingConfig();
     DreameseStore.downloadJson(config, 'site-config.json');
     showToast('Đã xuất site-config.json.');
   }
@@ -1008,7 +1377,10 @@
     try {
       const raw = await file.text();
       const parsed = JSON.parse(raw);
-      config = DreameseStore.mergeDeep(DreameseStore.clone(window.DREAMESE_DEFAULT_CONFIG), parsed);
+      config = DreameseStore.normalizeV06(
+        DreameseStore.mergeDeep(DreameseStore.clone(window.DREAMESE_DEFAULT_CONFIG), parsed),
+        window.DREAMESE_DEFAULT_CONFIG
+      );
       await DreameseStore.saveConfig(config);
       setDirty(false);
       renderPanel();
@@ -1309,12 +1681,13 @@
       }
 
       const backup = event.target.closest('[data-backup-action]');
+      if (backup?.dataset.backupAction === 'export-site') exportWebsiteBackup();
       if (backup?.dataset.backupAction === 'export') exportConfig();
       if (backup?.dataset.backupAction === 'reset') resetDefaults();
     });
 
     q('#saveConfig').addEventListener('click', save);
-    q('#exportConfig').addEventListener('click', exportConfig);
+    q('#exportConfig').addEventListener('click', exportWebsiteBackup);
     q('#importConfig').addEventListener('change', (event) => importFile(event.target.files?.[0]));
     q('#openWebsite').addEventListener('click', () => window.open('index.html', '_blank'));
     q('#refreshPreview').addEventListener('click', () => {
