@@ -1,23 +1,23 @@
 {
   "version": "0.7.3",
   "brand": {
-    "browserTitle": "Titan Construction — Architecture Design & Build",
-    "favicon": "TITAN_Logo.png",
-    "metaDescription": "Titan Construction — Architecture Design & Build",
+    "browserTitle": "TITAN — Architecture Design & Build",
+    "favicon": "assets/uploads/233b13d690426e72d32d1aa1.png",
+    "metaDescription": "Dreamese Studio — Architecture & Interior Design.",
     "themeColor": "#050505",
     "name": "TITAN CONSTRUCTION",
     "tagline": "Make your ideas come true",
-    "logo": "TITAN_Logo.png",
+    "logo": "assets/uploads/233b13d690426e72d32d1aa1.png",
     "logoLink": "index.html",
     "email": "titanconstruction68kg@gmail.com",
-    "phone": "0912 51 52 58",
-    "location": "TP. Hồ Chí Minh, Việt Nam",
+    "phone": "091 251 52 58",
+    "location": "Rạch Giá - An Giang",
     "socialLabel": "Instagram / TikTok",
-    "socialUrl": "https://www.tiktok.com/@quoclinh258",
+    "socialUrl": "https://www.facebook.com/profile.php?id=61574102260177",
     "mobile": {
       "name": "TITAN CONSTRUCTION",
       "tagline": "Make your ideas come true",
-      "logo": "TITAN_Logo.png",
+      "logo": "assets/uploads/233b13d690426e72d32d1aa1.png",
       "logoLink": "index.html",
       "email": "vtv.arc@gmail.com",
       "phone": "09 4363 4758",
@@ -86,11 +86,11 @@
     "mediaCardWidth": 260,
     "contactCardWidth": 360,
     "cardRadius": 26,
-    "headingSizeDesktop": 72,
+    "headingSizeDesktop": 50,
     "headingSizeMobile": 50,
     "bodySize": 16,
     "projectTitleSize": 58,
-    "navSize": 11,
+    "navSize": 13.5,
     "brandSize": 16,
     "mobileProjectCardHeight": 220,
     "mobileProjectGap": 12,
@@ -106,27 +106,27 @@
         "label": "01 / Câu chuyện",
         "title": "Mọi ý tưởng đều bắt nguồn từ những lần chuyện phiếm",
         "body": "Kiến trúc sư đóng vai trò như những dịch giả, biến những ý tưởng tưởng chừng mơ hồ thành một không gian sống đích thực và có bản sắc riêng.",
-        "image": "PROJECTS/TouchHome/ExC_03.1.png",
+        "image": "assets/uploads/0d72030483379237b52cd429.png",
         "link": "#projects",
         "mobile": {
           "label": "01 / Câu chuyện",
           "title": "Chúng tôi dịch những mong muốn vô hình thành trải nghiệm không gian có thể chạm tới.",
           "body": "Kiến trúc sư đóng vai trò như những dịch giả, biến các ước vọng tưởng chừng mơ hồ thành một không gian sống đích thực và có bản sắc riêng.",
-          "image": "PROJECTS/TouchHome/ExC_03.1.png",
+          "image": "assets/uploads/0d72030483379237b52cd429.png",
           "link": "#projects"
         }
       },
       {
         "label": "02 / Lắng nghe",
-        "title": "Chúng tôi đề cao sự lắng nghe và tháu cảm",
+        "title": "Chúng tôi đề cao sự lắng nghe và thấu cảm",
         "body": "Thay vì mải luyên thuyên về ý đồ thiết kế và cái tôi của nhà thiết kế, việc đồng cảm, lắng nghe và truyền cảm hứng sẽ tạo nên tuyệt tác.",
-        "image": "assets/projects/02-thu-dieu.svg",
+        "image": "assets/uploads/8ad222d364a0b3d3764e291e.jpg",
         "link": "#contact",
         "mobile": {
           "label": "02 / Lắng nghe",
-          "title": "Chúng tôi đề cao sự lắng nghe và tháu cảm",
-          "body": "Thay vì mải luyên thuyên về ý đồ thiết kế và cái tôi của nhà thiết kế, việc đồng cảm, lắng nghe và truyền cảm hứng sẽ tạo nên tuyệt tác.",
-          "image": "assets/projects/02-thu-dieu.svg",
+          "title": "Mỗi dự án bắt đầu bằng việc lắng nghe, quan sát và đặt đúng câu hỏi.",
+          "body": "Chúng tôi tôn trọng, trân quý và luôn lắng nghe khách hàng một cách chân thành để mỗi công trình trở thành một chặng đường đáng nhớ.",
+          "image": "assets/uploads/8ad222d364a0b3d3764e291e.jpg",
           "link": "#contact"
         }
       },
@@ -134,13 +134,13 @@
         "label": "03 / Đồng hành",
         "title": "Từng bước hiện thực hóa đều được đồng thành và chuẩn hóa",
         "body": "Đội ngũ trẻ trung, chuyên nghiệp và có chuyên môn cao, biến mọi câu chuyện và ý tưởng trở nên chân thật trong từng hình khối",
-        "image": "assets/projects/03-tvt-home.svg",
+        "image": "assets/uploads/9779cc16d5aaf4167a38d8b2.jpg",
         "link": "#service",
         "mobile": {
           "label": "03 / Đồng hành",
-          "title": "Từng bước hiện thực hóa đều được đồng thành và chuẩn hóa",
-          "body": "Đội ngũ trẻ trung, chuyên nghiệp và có chuyên môn cao, biến mọi câu chuyện và ý tưởng trở nên chân thật trong từng hình khối",
-          "image": "assets/projects/03-tvt-home.svg",
+          "title": "Thiết kế được phát triển xuyên suốt từ ý tưởng đến quá trình hiện thực hóa.",
+          "body": "Studio đồng hành ở các mảng kiến trúc, nội thất, visualization và quản lý triển khai để tinh thần thiết kế được giữ nhất quán.",
+          "image": "assets/uploads/9779cc16d5aaf4167a38d8b2.jpg",
           "link": "#service"
         }
       }
@@ -161,70 +161,53 @@
   },
   "projects": [
     {
-      "chapter": "00",
-      "title": "Rustania Homes",
-      "subtitle": "Mô tả ngắn",
-      "category": "Loại dự án",
-      "image": "assets/projects/01-tt-villa.svg",
-      "description": "Nội dung giới thiệu dự án.",
-      "href": "#",
-      "mobile": {
-        "title": "Rustania Homes",
-        "subtitle": "Mô tả ngắn",
-        "category": "Loại dự án",
-        "image": "assets/projects/01-tt-villa.svg",
-        "description": "Nội dung giới thiệu dự án.",
-        "href": "#"
-      }
-    },
-    {
-      "chapter": "00",
-      "title": "Squid Villa",
-      "subtitle": "Mô tả ngắn",
-      "category": "Loại dự án",
-      "image": "assets/projects/01-tt-villa.svg",
-      "description": "Nội dung giới thiệu dự án.",
-      "href": "#",
-      "mobile": {
-        "title": "Squid Villa",
-        "subtitle": "Mô tả ngắn",
-        "category": "Loại dự án",
-        "image": "assets/projects/01-tt-villa.svg",
-        "description": "Nội dung giới thiệu dự án.",
-        "href": "#"
-      }
-    },
-    {
-      "chapter": "00",
+      "chapter": "10",
       "title": "Phú Cường Villa",
-      "subtitle": "Mô tả ngắn",
-      "category": "Loại dự án",
-      "image": "assets/projects/01-tt-villa.svg",
+      "subtitle": "Không phù phiếm",
+      "category": "Biệt thự",
+      "image": "assets/uploads/2754fbdea976554db51d04ac.png",
       "description": "Nội dung giới thiệu dự án.",
-      "href": "#",
+      "href": "https://dreamese.github.io/dreamesestudio/SimplePC.html",
       "mobile": {
         "title": "Phú Cường Villa",
-        "subtitle": "Mô tả ngắn",
-        "category": "Loại dự án",
-        "image": "assets/projects/01-tt-villa.svg",
+        "subtitle": "Không phù phiếm",
+        "category": "Biệt thự",
+        "image": "assets/uploads/2754fbdea976554db51d04ac.png",
         "description": "Nội dung giới thiệu dự án.",
-        "href": "#"
+        "href": "https://dreamese.github.io/dreamesestudio/SimplePC.html"
       }
     },
     {
-      "chapter": "06",
-      "title": "T&T Villa",
-      "subtitle": "Sự tương phản trong ánh nhìn",
-      "category": "Biệt thự",
-      "image": "PROJECTS/TT_Villa/ExC_02.1.jpg",
-      "description": "Một cấu trúc sống được tổ chức bằng tương phản sáng — tối, đặc — rỗng và những khoảng chuyển tiếp mềm mại.",
-      "href": "https://dreamese.github.io/dreamesestudio/TT_Villa.html",
+      "chapter": "09",
+      "title": "Rustania Homes",
+      "subtitle": "Trải nghiệm mới, cuộc sống mới",
+      "category": "Biệt thự nghỉ dưỡng",
+      "image": "assets/uploads/56a885afe1a548005d9dc826.png",
+      "description": "Nội dung giới thiệu dự án.",
+      "href": "https://dreamese.github.io/dreamesestudio/Rustania.html",
       "mobile": {
-        "title": "T&T Villa",
-        "subtitle": "Sự tương phản trong ánh nhìn",
-        "category": "Biệt thự",
+        "title": "Rustania Homes",
+        "subtitle": "Trải nghiệm mới, cuộc sống mới",
+        "category": "Biệt thự nghỉ dưỡng",
         "image": "assets/projects/01-tt-villa.svg",
-        "description": "Một cấu trúc sống được tổ chức bằng tương phản sáng — tối, đặc — rỗng và những khoảng chuyển tiếp mềm mại.",
+        "description": "Nội dung giới thiệu dự án.",
+        "href": "https://dreamese.github.io/dreamesestudio/Rustania.html"
+      }
+    },
+    {
+      "chapter": "08",
+      "title": "Lavender Restaurant",
+      "subtitle": "Giá trị chuyển biến",
+      "category": "Nhà hàng",
+      "image": "assets/uploads/a0f6c5ffa9365effe808de04.jpg",
+      "description": "Không gian ẩm thực được xây dựng như một chuỗi chuyển cảnh, linh hoạt giữa tính riêng tư và bầu không khí cộng đồng.",
+      "href": "#",
+      "mobile": {
+        "title": "Lavender Restaurant",
+        "subtitle": "Giá trị chuyển biến",
+        "category": "Nhà hàng",
+        "image": "assets/projects/08-lavender.svg",
+        "description": "Không gian ẩm thực được xây dựng như một chuỗi chuyển cảnh, linh hoạt giữa tính riêng tư và bầu không khí cộng đồng.",
         "href": "#"
       }
     },
@@ -233,7 +216,7 @@
       "title": "Touch House",
       "subtitle": "Điểm chạm của không gian",
       "category": "Nhà ở",
-      "image": "PROJECTS/TouchHome/ExC_02.1.png",
+      "image": "assets/uploads/5c47368a9f5f715ee3f18649.png",
       "description": "Vật liệu, ánh sáng và chuyển động giao nhau tại những điểm chạm nhỏ, tạo nên trải nghiệm sống giàu cảm giác.",
       "href": "#",
       "mobile": {
@@ -246,30 +229,13 @@
       }
     },
     {
-      "chapter": "08",
-      "title": "Lavender Restaurant",
-      "subtitle": "Giá trị chuyển biến",
-      "category": "Nhà hàng",
-      "image": "PROJECTS/Lavender/C8.jpg",
-      "description": "Không gian ẩm thực được xây dựng như một chuỗi chuyển cảnh, linh hoạt giữa tính riêng tư và bầu không khí cộng đồng.",
-      "href": "https://dreamese.github.io/dreamesestudio/Lavender.html",
-      "mobile": {
-        "title": "Lavender Restaurant",
-        "subtitle": "Giá trị chuyển biến",
-        "category": "Nhà hàng",
-        "image": "assets/projects/08-lavender.svg",
-        "description": "Không gian ẩm thực được xây dựng như một chuỗi chuyển cảnh, linh hoạt giữa tính riêng tư và bầu không khí cộng đồng.",
-        "href": "#"
-      }
-    },
-    {
-      "chapter": "05",
+      "chapter": "06",
       "title": "Nhuận Home",
       "subtitle": "Về nhà",
       "category": "Biệt thự",
-      "image": "PROJECTS/PN1/PN1_ExC_09.1.png",
+      "image": "assets/uploads/add868e0b17cc3207d0b328a.png",
       "description": "Một tổ ấm gần gũi, cân bằng giữa công năng, cảm giác thân thuộc và sự tinh giản của kiến trúc đương đại.",
-      "href": "#",
+      "href": "https://dreamese.github.io/dreamesestudio/Rustania.html",
       "mobile": {
         "title": "Nhuận Home",
         "subtitle": "Về nhà",
@@ -280,28 +246,28 @@
       }
     },
     {
-      "chapter": "04",
+      "chapter": "05",
       "title": "Cù Lao Villa",
       "subtitle": "Theo luồng cảm xúc",
       "category": "Biệt thự",
-      "image": "PROJECTS/TranPhuong_Villa/TP-Villa_ExC_02.1.png",
+      "image": "assets/uploads/401a25e965c42697e8b94d1c.png",
       "description": "Hành trình không gian được mở theo từng lớp cảnh quan, từ vùng đệm riêng tư đến những khoảng sinh hoạt rộng mở.",
       "href": "#",
       "mobile": {
         "title": "Cù Lao Villa",
         "subtitle": "Theo luồng cảm xúc",
         "category": "Biệt thự",
-        "image": "PROJECTS/TranPhuong_Villa/TP-Villa_ExC_02.1.png",
+        "image": "assets/projects/05-cu-lao-villa.svg",
         "description": "Hành trình không gian được mở theo từng lớp cảnh quan, từ vùng đệm riêng tư đến những khoảng sinh hoạt rộng mở.",
         "href": "#"
       }
     },
     {
-      "chapter": "03",
+      "chapter": "04",
       "title": "Breath Villa",
       "subtitle": "Lắng nghe những nhịp chậm",
       "category": "Biệt thự",
-      "image": "PROJECTS/Chateur_QL_Villa/Chateur_ExC_02.jpg",
+      "image": "assets/uploads/97db5a3483445df34ed271bd.jpg",
       "description": "Các khoảng thở, sân trong và lớp cây xanh được đan xen để đưa khí trời len sâu vào đời sống hằng ngày.",
       "href": "#",
       "mobile": {
@@ -314,11 +280,11 @@
       }
     },
     {
-      "chapter": "02",
+      "chapter": "03",
       "title": "TVT Home",
       "subtitle": "Trỗi dậy và bứt phá",
       "category": "Nhà phố",
-      "image": "PROJECTS/TVT_House/F1.jpg",
+      "image": "assets/uploads/18efdb637ec1885ba5a01ac8.jpg",
       "description": "Một ngôi nhà đô thị với những khoảng mở có chủ đích, kết nối nhiều tầng sinh hoạt trong một hình khối cô đọng.",
       "href": "#",
       "mobile": {
@@ -331,11 +297,11 @@
       }
     },
     {
-      "chapter": "01",
+      "chapter": "02",
       "title": "Thu Điếu",
       "subtitle": "Nốt nhạc tĩnh của thanh âm",
       "category": "Biệt thự",
-      "image": "PROJECTS/Thu_Dieu/ExC_01.2.jpg",
+      "image": "assets/uploads/a91170226b98441a8980cf05.jpg",
       "description": "Không gian hướng đến sự tĩnh tại, nơi ánh sáng tự nhiên, mặt nước và các lớp vật liệu tạo nên nhịp điệu chậm.",
       "href": "#",
       "mobile": {
@@ -344,6 +310,23 @@
         "category": "Biệt thự",
         "image": "assets/projects/02-thu-dieu.svg",
         "description": "Không gian hướng đến sự tĩnh tại, nơi ánh sáng tự nhiên, mặt nước và các lớp vật liệu tạo nên nhịp điệu chậm.",
+        "href": "#"
+      }
+    },
+    {
+      "chapter": "01",
+      "title": "T&T Villa",
+      "subtitle": "Sự tương phản trong ánh nhìn",
+      "category": "Biệt thự",
+      "image": "assets/uploads/ebb7178f9e07b6d3a6db50a5.jpg",
+      "description": "Một cấu trúc sống được tổ chức bằng tương phản sáng — tối, đặc — rỗng và những khoảng chuyển tiếp mềm mại.",
+      "href": "#",
+      "mobile": {
+        "title": "T&T Villa",
+        "subtitle": "Sự tương phản trong ánh nhìn",
+        "category": "Biệt thự",
+        "image": "assets/projects/01-tt-villa.svg",
+        "description": "Một cấu trúc sống được tổ chức bằng tương phản sáng — tối, đặc — rỗng và những khoảng chuyển tiếp mềm mại.",
         "href": "#"
       }
     }
@@ -426,42 +409,42 @@
         "title": "TikTok Video 10",
         "label": "Titan Construction",
         "image": "assets/projects/01-tt-villa.svg",
-        "description": "Video TikTok được gắn thử trực tiếp vào popup Media. Nhấn OPEN VIDEO để mở video gốc.",
-        "url": "https://www.tiktok.com/@quoclinh258/video/7666387664395963655",
+        "description": "Video mạng xã hội của Dreamese Studio. Thay ảnh bìa và đường dẫn trong ứng dụng quản trị.",
+        "url": "https://www.tiktok.com/@quoclinh258/video/7657872311017688327?is_from_webapp=1&sender_device=pc&web_id=7628454363396670983",
         "mobile": {
-          "title": "TikTok Video 10",
-          "label": "Titan Construction",
+          "title": "TikTok Video 01",
+          "label": "@quoclinh258 / Social Media",
           "image": "assets/projects/01-tt-villa.svg",
-          "description": "Video TikTok được gắn thử trực tiếp vào popup Media. Nhấn OPEN VIDEO để mở video gốc.",
-          "url": "https://www.tiktok.com/@quoclinh258/video/7666387664395963655"
+          "description": "Video mạng xã hội của Dreamese Studio. Thay ảnh bìa và đường dẫn trong ứng dụng quản trị.",
+          "url": "https://www.tiktok.com/@quoclinh258/video/7657872311017688327"
         }
       },
       {
         "title": "TikTok Video 09",
         "label": "Titan Construction",
         "image": "assets/projects/02-thu-dieu.svg",
-        "description": "Video TikTok được gắn thử trực tiếp vào popup Media. Nhấn OPEN VIDEO để mở video gốc.",
-        "url": "https://www.tiktok.com/@quoclinh258/video/7609638041191238919",
+        "description": "Video mạng xã hội của Dreamese Studio. Thay ảnh bìa và đường dẫn trong ứng dụng quản trị.",
+        "url": "https://www.tiktok.com/@quoclinh258/video/7536155843008515346?is_from_webapp=1&sender_device=pc&web_id=7628454363396670983",
         "mobile": {
-          "title": "TikTok Video 09",
-          "label": "Titan Construction",
+          "title": "TikTok Video 02",
+          "label": "@quoclinh258 / Social Media",
           "image": "assets/projects/02-thu-dieu.svg",
-          "description": "Video TikTok được gắn thử trực tiếp vào popup Media. Nhấn OPEN VIDEO để mở video gốc.",
-          "url": "https://www.tiktok.com/@quoclinh258/video/7609638041191238919"
+          "description": "Video mạng xã hội của Dreamese Studio. Thay ảnh bìa và đường dẫn trong ứng dụng quản trị.",
+          "url": "https://www.tiktok.com/@quoclinh258/video/7536155843008515346"
         }
       },
       {
         "title": "TikTok Video 08",
         "label": "Titan Construction",
         "image": "assets/projects/03-tvt-home.svg",
-        "description": "Video TikTok được gắn thử trực tiếp vào popup Media. Nhấn OPEN VIDEO để mở video gốc.",
-        "url": "https://www.tiktok.com/@quoclinh258/video/7657872311017688327",
+        "description": "Video mạng xã hội của Dreamese Studio. Thay ảnh bìa và đường dẫn trong ứng dụng quản trị.",
+        "url": "https://www.tiktok.com/@quoclinh258/video/7667904213527317768?is_from_webapp=1&sender_device=pc&web_id=7628454363396670983",
         "mobile": {
-          "title": "TikTok Video 08",
-          "label": "Titan Construction",
+          "title": "TikTok Video 03",
+          "label": "@quoclinh258 / Social Media",
           "image": "assets/projects/03-tvt-home.svg",
-          "description": "Video TikTok được gắn thử trực tiếp vào popup Media. Nhấn OPEN VIDEO để mở video gốc.",
-          "url": "https://www.tiktok.com/@quoclinh258/video/7657872311017688327"
+          "description": "Video mạng xã hội của Dreamese Studio. Thay ảnh bìa và đường dẫn trong ứng dụng quản trị.",
+          "url": "https://www.tiktok.com/@quoclinh258/video/7667904213527317768?is_from_webapp=1&sender_device=pc&web_id=7628454363396670983"
         }
       },
       {
@@ -469,13 +452,13 @@
         "label": "Titan Construction",
         "image": "assets/projects/04-breath-villa.svg",
         "description": "Video mạng xã hội của Dreamese Studio. Thay ảnh bìa và đường dẫn trong ứng dụng quản trị.",
-        "url": "https://www.tiktok.com/@quoclinh258",
+        "url": "https://www.tiktok.com/@quoclinh258/video/7655275351576300807?is_from_webapp=1&web_id=7628454363396670983",
         "mobile": {
-          "title": "TikTok Video 07",
-          "label": "Titan Construction",
+          "title": "TikTok Video 04",
+          "label": "@quoclinh258 / Social Media",
           "image": "assets/projects/04-breath-villa.svg",
           "description": "Video mạng xã hội của Dreamese Studio. Thay ảnh bìa và đường dẫn trong ứng dụng quản trị.",
-          "url": "https://www.tiktok.com/@quoclinh258"
+          "url": "https://www.tiktok.com/@quoclinh258/video/7655275351576300807?is_from_webapp=1&web_id=7628454363396670983"
         }
       },
       {
@@ -483,13 +466,13 @@
         "label": "Titan Construction",
         "image": "assets/projects/05-cu-lao-villa.svg",
         "description": "Video mạng xã hội của Dreamese Studio. Thay ảnh bìa và đường dẫn trong ứng dụng quản trị.",
-        "url": "https://www.tiktok.com/@quoclinh258",
+        "url": "https://www.tiktok.com/@quoclinh258/video/7609638041191238919?is_from_webapp=1&sender_device=pc&web_id=7628454363396670983",
         "mobile": {
-          "title": "TikTok Video 06",
-          "label": "Titan Construction",
+          "title": "TikTok Video 05",
+          "label": "@quoclinh258 / Social Media",
           "image": "assets/projects/05-cu-lao-villa.svg",
           "description": "Video mạng xã hội của Dreamese Studio. Thay ảnh bìa và đường dẫn trong ứng dụng quản trị.",
-          "url": "https://www.tiktok.com/@quoclinh258"
+          "url": "https://www.tiktok.com/@quoclinh258/video/7657872311017688327"
         }
       },
       {
@@ -497,13 +480,13 @@
         "label": "Titan Construction",
         "image": "assets/projects/06-nhuan-home.svg",
         "description": "Video mạng xã hội của Dreamese Studio. Thay ảnh bìa và đường dẫn trong ứng dụng quản trị.",
-        "url": "https://www.tiktok.com/@quoclinh258",
+        "url": "https://www.tiktok.com/@quoclinh258/video/7660347782259019015?is_from_webapp=1&sender_device=pc&web_id=7628454363396670983",
         "mobile": {
-          "title": "TikTok Video 05",
-          "label": "Titan Construction",
+          "title": "TikTok Video 06",
+          "label": "@quoclinh258 / Social Media",
           "image": "assets/projects/06-nhuan-home.svg",
           "description": "Video mạng xã hội của Dreamese Studio. Thay ảnh bìa và đường dẫn trong ứng dụng quản trị.",
-          "url": "https://www.tiktok.com/@quoclinh258"
+          "url": "https://www.tiktok.com/@quoclinh258/video/7660347782259019015?is_from_webapp=1&sender_device=pc&web_id=7628454363396670983"
         }
       },
       {
@@ -511,13 +494,13 @@
         "label": "Titan Construction",
         "image": "assets/projects/07-touch-house.svg",
         "description": "Video mạng xã hội của Dreamese Studio. Thay ảnh bìa và đường dẫn trong ứng dụng quản trị.",
-        "url": "https://www.tiktok.com/@quoclinh258",
+        "url": "https://www.tiktok.com/@quoclinh258/video/7666387664395963655",
         "mobile": {
-          "title": "TikTok Video 04",
-          "label": "Titan Construction",
+          "title": "TikTok Video 07",
+          "label": "@quoclinh258 / Social Media",
           "image": "assets/projects/07-touch-house.svg",
           "description": "Video mạng xã hội của Dreamese Studio. Thay ảnh bìa và đường dẫn trong ứng dụng quản trị.",
-          "url": "https://www.tiktok.com/@quoclinh258"
+          "url": "https://www.tiktok.com/@quoclinh258/video/7666387664395963655"
         }
       },
       {
@@ -525,13 +508,13 @@
         "label": "Titan Construction",
         "image": "assets/projects/08-lavender.svg",
         "description": "Video mạng xã hội của Dreamese Studio. Thay ảnh bìa và đường dẫn trong ứng dụng quản trị.",
-        "url": "https://www.tiktok.com/@quoclinh258",
+        "url": "https://www.tiktok.com/@quoclinh258/video/7656777820508556562",
         "mobile": {
-          "title": "TikTok Video 03",
-          "label": "Titan Construction",
+          "title": "TikTok Video 08",
+          "label": "@quoclinh258 / Social Media",
           "image": "assets/projects/08-lavender.svg",
           "description": "Video mạng xã hội của Dreamese Studio. Thay ảnh bìa và đường dẫn trong ứng dụng quản trị.",
-          "url": "https://www.tiktok.com/@quoclinh258"
+          "url": "https://www.tiktok.com/@quoclinh258/video/7656777820508556562"
         }
       },
       {
@@ -539,13 +522,13 @@
         "label": "Titan Construction",
         "image": "assets/projects/02-thu-dieu.svg",
         "description": "Video mạng xã hội của Dreamese Studio. Thay ảnh bìa và đường dẫn trong ứng dụng quản trị.",
-        "url": "https://www.tiktok.com/@quoclinh258",
+        "url": "https://www.tiktok.com/@quoclinh258/video/7651938047860165906",
         "mobile": {
-          "title": "TikTok Video 02",
-          "label": "Titan Construction",
+          "title": "TikTok Video 09",
+          "label": "@quoclinh258 / Social Media",
           "image": "assets/projects/02-thu-dieu.svg",
           "description": "Video mạng xã hội của Dreamese Studio. Thay ảnh bìa và đường dẫn trong ứng dụng quản trị.",
-          "url": "https://www.tiktok.com/@quoclinh258"
+          "url": "https://www.tiktok.com/@quoclinh258/video/7651938047860165906"
         }
       },
       {
@@ -553,13 +536,13 @@
         "label": "Titan Construction",
         "image": "assets/projects/03-tvt-home.svg",
         "description": "Video mạng xã hội của Dreamese Studio. Thay ảnh bìa và đường dẫn trong ứng dụng quản trị.",
-        "url": "https://www.tiktok.com/@quoclinh258",
+        "url": "https://www.tiktok.com/@quoclinh258/video/7650089770076359944",
         "mobile": {
-          "title": "TikTok Video 01",
-          "label": "Titan Construction",
+          "title": "TikTok Video 10",
+          "label": "@quoclinh258 / Social Media",
           "image": "assets/projects/03-tvt-home.svg",
           "description": "Video mạng xã hội của Dreamese Studio. Thay ảnh bìa và đường dẫn trong ứng dụng quản trị.",
-          "url": "https://www.tiktok.com/@quoclinh258"
+          "url": "https://www.tiktok.com/@quoclinh258/video/7650089770076359944"
         }
       }
     ],
@@ -570,7 +553,7 @@
   },
   "news": {
     "eyebrow": "News",
-    "title": "Cập nhật tin tức cho ngành xây dựng",
+    "title": "Những câu chuyện, cập nhật và góc nhìn mới từ Dreamese Studio.",
     "items": [
       {
         "number": "01",
@@ -582,13 +565,13 @@
         "image": "assets/projects/01-tt-villa.svg",
         "href": "#contact",
         "mobile": {
+          "date": "31.07.2026",
+          "category": "Project Update",
           "title": "T&T Villa chính thức hoàn thiện giai đoạn hình ảnh giới thiệu",
           "subtitle": "Một dự án bước sang chương truyền thông mới",
           "description": "Studio đã hoàn thiện bộ hình ảnh đầu tiên cho T&T Villa, tập trung vào sự tương phản sáng — tối, đặc — rỗng và cách những khoảng chuyển tiếp định hình trải nghiệm sống.",
           "image": "assets/projects/01-tt-villa.svg",
-          "href": "#contact",
-          "category": "Project Update",
-          "date": "31.07.2026"
+          "href": "#contact"
         }
       },
       {
@@ -601,13 +584,13 @@
         "image": "assets/projects/02-thu-dieu.svg",
         "href": "#contact",
         "mobile": {
+          "date": "26.07.2026",
+          "category": "Studio Note",
           "title": "Quy trình phát triển một concept nội thất tại Dreamese Studio",
           "subtitle": "Thiết kế bắt đầu từ đối thoại, không bắt đầu từ hình thức",
           "description": "Một concept được phát triển từ thói quen sử dụng, nhu cầu thật, ngân sách và câu chuyện mà chủ nhân muốn gìn giữ.",
           "image": "assets/projects/02-thu-dieu.svg",
-          "href": "#contact",
-          "category": "Studio Note",
-          "date": "26.07.2026"
+          "href": "#contact"
         }
       },
       {
@@ -620,13 +603,13 @@
         "image": "assets/projects/03-tvt-home.svg",
         "href": "#media",
         "mobile": {
+          "date": "18.07.2026",
+          "category": "Blog",
           "title": "Dreamese Studio mở rộng nội dung video ngắn trên TikTok",
           "subtitle": "Những khoảnh khắc của công trình được kể lại bằng chuyển động",
           "description": "Series video mới tập trung vào ánh sáng, vật liệu, chuyển động trong không gian và những câu chuyện hậu trường.",
           "image": "assets/projects/03-tvt-home.svg",
-          "href": "#media",
-          "category": "Blog",
-          "date": "18.07.2026"
+          "href": "#media"
         }
       },
       {
@@ -639,17 +622,17 @@
         "image": "assets/projects/08-lavender.svg",
         "href": "#service",
         "mobile": {
+          "date": "10.07.2026",
+          "category": "Practice",
           "title": "Dịch vụ thiết kế được tổ chức lại theo hướng chuyên sâu hơn",
           "subtitle": "Mỗi lựa chọn dịch vụ tương ứng với một mức độ đồng hành khác nhau",
           "description": "Cấu trúc mới giúp khách hàng dễ nhận biết phạm vi của các nhóm dịch vụ và mức độ đồng hành.",
           "image": "assets/projects/08-lavender.svg",
-          "href": "#service",
-          "category": "Practice",
-          "date": "10.07.2026"
+          "href": "#service"
         }
       },
       {
-        "number": "00",
+        "number": "05",
         "date": "31.07.2026",
         "category": "News",
         "title": "Tiêu đề tin tức mới",
@@ -668,64 +651,7 @@
         }
       },
       {
-        "number": "00",
-        "date": "31.07.2026",
-        "category": "News",
-        "title": "Tiêu đề tin tức mới",
-        "subtitle": "Tiêu đề phụ",
-        "description": "Nội dung chi tiết của bài viết.",
-        "image": "assets/projects/01-tt-villa.svg",
-        "href": "#contact",
-        "mobile": {
-          "date": "31.07.2026",
-          "category": "News",
-          "title": "Tiêu đề tin tức mới",
-          "subtitle": "Tiêu đề phụ",
-          "description": "Nội dung chi tiết của bài viết.",
-          "image": "assets/projects/01-tt-villa.svg",
-          "href": "#contact"
-        }
-      },
-      {
-        "number": "00",
-        "date": "31.07.2026",
-        "category": "News",
-        "title": "Tiêu đề tin tức mới",
-        "subtitle": "Tiêu đề phụ",
-        "description": "Nội dung chi tiết của bài viết.",
-        "image": "assets/projects/01-tt-villa.svg",
-        "href": "#contact",
-        "mobile": {
-          "date": "31.07.2026",
-          "category": "News",
-          "title": "Tiêu đề tin tức mới",
-          "subtitle": "Tiêu đề phụ",
-          "description": "Nội dung chi tiết của bài viết.",
-          "image": "assets/projects/01-tt-villa.svg",
-          "href": "#contact"
-        }
-      },
-      {
-        "number": "00",
-        "date": "31.07.2026",
-        "category": "News",
-        "title": "Tiêu đề tin tức mới",
-        "subtitle": "Tiêu đề phụ",
-        "description": "Nội dung chi tiết của bài viết.",
-        "image": "assets/projects/01-tt-villa.svg",
-        "href": "#contact",
-        "mobile": {
-          "date": "31.07.2026",
-          "category": "News",
-          "title": "Tiêu đề tin tức mới",
-          "subtitle": "Tiêu đề phụ",
-          "description": "Nội dung chi tiết của bài viết.",
-          "image": "assets/projects/01-tt-villa.svg",
-          "href": "#contact"
-        }
-      },
-      {
-        "number": "00",
+        "number": "06",
         "date": "31.07.2026",
         "category": "News",
         "title": "Tiêu đề tin tức mới",
@@ -789,15 +715,15 @@
   },
   "contact": {
     "eyebrow": "Contact",
-    "title": "Dreamese Studio — Đồng hành kiến tạo không gian sống.",
+    "title": "Titan Construction - Đồng hành kiến tạo không gian sống.",
     "cards": [
       {
         "type": "info",
         "title": "Thông tin liên hệ",
         "lines": [
+          "Hotline: 091 251 52 58 — Mr. Lĩnh",
           "Hotline: 09 4363 4758 — KTS. Vương",
-          "Hotline: 0903 888 200 — KS. Toàn",
-          "Email: titanconstruction68kg@gmail.com"
+          "titanconstruction68kg@gmail.com"
         ],
         "image": "",
         "link": "mailto:vtv.arc@gmail.com",
@@ -818,6 +744,7 @@
         "type": "address",
         "title": "Địa chỉ",
         "lines": [
+          "Trụ sở: A14 - 16 đường số 5- KĐT Tây Bắc, P. Rạch Giá, An Giang",
           "Cơ sở 1: Trần Văn Thời — Cà Mau",
           "Cơ sở 2: 11/8/32 ĐHT 17, P. Đông Hưng Thuận, TP.HCM"
         ],
@@ -841,15 +768,15 @@
         "lines": [
           "Tìm Dreamese Studio trên Google Maps"
         ],
-        "image": "",
-        "link": "https://maps.google.com/",
+        "image": "assets/projects/05-cu-lao-villa.svg",
+        "link": "https://maps.app.goo.gl/4mMcQz4KKNqbbLc97",
         "linkLabel": "Mở Google Maps →",
         "mobile": {
           "title": "Maps",
           "lines": [
             "Tìm Dreamese Studio trên Google Maps"
           ],
-          "image": "",
+          "image": "assets/projects/05-cu-lao-villa.svg",
           "link": "https://maps.google.com/",
           "linkLabel": "Mở Google Maps →"
         }
@@ -862,7 +789,7 @@
           "TikTok",
           "Facebook"
         ],
-        "image": "",
+        "image": "assets/projects/07-touch-house.svg",
         "link": "https://www.tiktok.com/@quoclinh258",
         "linkLabel": "Theo dõi Dreamese →",
         "mobile": {
@@ -872,7 +799,7 @@
             "TikTok",
             "Facebook"
           ],
-          "image": "",
+          "image": "assets/projects/07-touch-house.svg",
           "link": "https://www.tiktok.com/@quoclinh258",
           "linkLabel": "Theo dõi Dreamese →"
         },
