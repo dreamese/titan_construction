@@ -86,7 +86,7 @@
     "mediaCardWidth": 260,
     "contactCardWidth": 360,
     "cardRadius": 26,
-    "headingSizeDesktop": 72,
+    "headingSizeDesktop": 48,
     "headingSizeMobile": 50,
     "bodySize": 16,
     "projectTitleSize": 58,
@@ -789,14 +789,13 @@
   },
   "contact": {
     "eyebrow": "Contact",
-    "title": "Dreamese Studio — Đồng hành kiến tạo không gian sống.",
+    "title": "TITIAN CONSTRUCTION — Hiện thực hóa ý tưởng của bạn.",
     "cards": [
       {
         "type": "info",
         "title": "Thông tin liên hệ",
         "lines": [
-          "Hotline: 09 4363 4758 — KTS. Vương",
-          "Hotline: 0903 888 200 — KS. Toàn",
+          "Hotline: 091 251 52 58 — Mr. LĨNH",
           "Email: titanconstruction68kg@gmail.com"
         ],
         "image": "",
@@ -805,8 +804,7 @@
         "mobile": {
           "title": "Thông tin liên hệ",
           "lines": [
-            "Hotline: 09 4363 4758 — KTS. Vương",
-            "Hotline: 0903 888 200 — KS. Toàn",
+            "Hotline: 091 251 52 58 — Mr. LĨNH",
             "Email: titanconstruction68kg@gmail.com"
           ],
           "image": "",
@@ -818,8 +816,7 @@
         "type": "address",
         "title": "Địa chỉ",
         "lines": [
-          "Cơ sở 1: Trần Văn Thời — Cà Mau",
-          "Cơ sở 2: 11/8/32 ĐHT 17, P. Đông Hưng Thuận, TP.HCM"
+          "Trụ sở: A14-16, đường số 5, KĐT Tây Bắc, P. Rạch Giá, An Giang"
         ],
         "image": "",
         "link": "#",
@@ -827,8 +824,7 @@
         "mobile": {
           "title": "Địa chỉ",
           "lines": [
-            "Cơ sở 1: Trần Văn Thời — Cà Mau",
-            "Cơ sở 2: 11/8/32 ĐHT 17, P. Đông Hưng Thuận, TP.HCM"
+            "Trụ sở: A14-16, đường số 5, KĐT Tây Bắc, P. Rạch Giá, An Giang"
           ],
           "image": "",
           "link": "#",
@@ -839,18 +835,18 @@
         "type": "maps",
         "title": "Maps",
         "lines": [
-          "Tìm Dreamese Studio trên Google Maps"
+          "Tìm Titan Construction trên Google Maps"
         ],
-        "image": "",
-        "link": "https://maps.google.com/",
+        "image": "assets/uploads/eee40dc656050611343ee55c.jpg",
+        "link": "https://maps.app.goo.gl/giVfq9DPF6GcBJQZA",
         "linkLabel": "Mở Google Maps →",
         "mobile": {
           "title": "Maps",
           "lines": [
-            "Tìm Dreamese Studio trên Google Maps"
+            "Tìm Titan Construction trên Google Maps"
           ],
-          "image": "",
-          "link": "https://maps.google.com/",
+          "image": "assets/uploads/eee40dc656050611343ee55c.jpg",
+          "link": "https://maps.app.goo.gl/giVfq9DPF6GcBJQZA",
           "linkLabel": "Mở Google Maps →"
         }
       },
@@ -909,7 +905,7 @@
     ],
     "mobile": {
       "eyebrow": "Contact",
-      "title": "Dreamese Studio — Đồng hành kiến tạo không gian sống."
+      "title": "TITIAN CONSTRUCTION — Hiện thực hóa ý tưởng của bạn."
     }
   }
 }
