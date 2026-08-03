@@ -165,14 +165,14 @@
       "title": "Phú Cường Villa",
       "subtitle": "Không phù phiếm",
       "category": "Biệt thự",
-      "image": "assets/uploads/2754fbdea976554db51d04ac.png",
+      "image": "PROJECTS/SimplePC/Ext_006.1.png",
       "description": "Nội dung giới thiệu dự án.",
       "href": "https://dreamese.github.io/dreamesestudio/SimplePC.html",
       "mobile": {
         "title": "Phú Cường Villa",
         "subtitle": "Không phù phiếm",
         "category": "Biệt thự",
-        "image": "assets/uploads/2754fbdea976554db51d04ac.png",
+        "image": "PROJECTS/SimplePC/Ext_006.1.png",
         "description": "Nội dung giới thiệu dự án.",
         "href": "https://dreamese.github.io/dreamesestudio/SimplePC.html"
       }
@@ -182,7 +182,7 @@
       "title": "Rustania Homes",
       "subtitle": "Trải nghiệm mới, cuộc sống mới",
       "category": "Biệt thự nghỉ dưỡng",
-      "image": "assets/uploads/56a885afe1a548005d9dc826.png",
+      "image": "PROJECTS/RUSTANIA/A_ExC_008.1.png",
       "description": "Nội dung giới thiệu dự án.",
       "href": "https://dreamese.github.io/dreamesestudio/Rustania.html",
       "mobile": {
@@ -196,27 +196,10 @@
     },
     {
       "chapter": "08",
-      "title": "Lavender Restaurant",
-      "subtitle": "Giá trị chuyển biến",
-      "category": "Nhà hàng",
-      "image": "assets/uploads/a0f6c5ffa9365effe808de04.jpg",
-      "description": "Không gian ẩm thực được xây dựng như một chuỗi chuyển cảnh, linh hoạt giữa tính riêng tư và bầu không khí cộng đồng.",
-      "href": "#",
-      "mobile": {
-        "title": "Lavender Restaurant",
-        "subtitle": "Giá trị chuyển biến",
-        "category": "Nhà hàng",
-        "image": "assets/projects/08-lavender.svg",
-        "description": "Không gian ẩm thực được xây dựng như một chuỗi chuyển cảnh, linh hoạt giữa tính riêng tư và bầu không khí cộng đồng.",
-        "href": "#"
-      }
-    },
-    {
-      "chapter": "07",
       "title": "Touch House",
       "subtitle": "Điểm chạm của không gian",
       "category": "Nhà ở",
-      "image": "assets/uploads/5c47368a9f5f715ee3f18649.png",
+      "image": "PROJECTS/TouchHome/ExC_02.1.png",
       "description": "Vật liệu, ánh sáng và chuyển động giao nhau tại những điểm chạm nhỏ, tạo nên trải nghiệm sống giàu cảm giác.",
       "href": "#",
       "mobile": {
@@ -229,11 +212,28 @@
       }
     },
     {
+      "chapter": "07",
+      "title": "T&T Villa",
+      "subtitle": "Sự tương phản trong ánh nhìn",
+      "category": "Biệt thự",
+      "image": "PROJECTS/TT_Villa/ExC_02.1.jpg",
+      "description": "Một cấu trúc sống được tổ chức bằng tương phản sáng — tối, đặc — rỗng và những khoảng chuyển tiếp mềm mại.",
+      "href": "#",
+      "mobile": {
+        "title": "T&T Villa",
+        "subtitle": "Sự tương phản trong ánh nhìn",
+        "category": "Biệt thự",
+        "image": "assets/projects/01-tt-villa.svg",
+        "description": "Một cấu trúc sống được tổ chức bằng tương phản sáng — tối, đặc — rỗng và những khoảng chuyển tiếp mềm mại.",
+        "href": "#"
+      }
+    },
+    {
       "chapter": "06",
       "title": "Nhuận Home",
       "subtitle": "Về nhà",
       "category": "Biệt thự",
-      "image": "assets/uploads/add868e0b17cc3207d0b328a.png",
+      "image": "PROJECTS/PN1/PN1_ExC_09.1.png",
       "description": "Một tổ ấm gần gũi, cân bằng giữa công năng, cảm giác thân thuộc và sự tinh giản của kiến trúc đương đại.",
       "href": "https://dreamese.github.io/dreamesestudio/Rustania.html",
       "mobile": {
@@ -247,44 +247,10 @@
     },
     {
       "chapter": "05",
-      "title": "Cù Lao Villa",
-      "subtitle": "Theo luồng cảm xúc",
-      "category": "Biệt thự",
-      "image": "assets/uploads/401a25e965c42697e8b94d1c.png",
-      "description": "Hành trình không gian được mở theo từng lớp cảnh quan, từ vùng đệm riêng tư đến những khoảng sinh hoạt rộng mở.",
-      "href": "#",
-      "mobile": {
-        "title": "Cù Lao Villa",
-        "subtitle": "Theo luồng cảm xúc",
-        "category": "Biệt thự",
-        "image": "assets/projects/05-cu-lao-villa.svg",
-        "description": "Hành trình không gian được mở theo từng lớp cảnh quan, từ vùng đệm riêng tư đến những khoảng sinh hoạt rộng mở.",
-        "href": "#"
-      }
-    },
-    {
-      "chapter": "04",
-      "title": "Breath Villa",
-      "subtitle": "Lắng nghe những nhịp chậm",
-      "category": "Biệt thự",
-      "image": "assets/uploads/97db5a3483445df34ed271bd.jpg",
-      "description": "Các khoảng thở, sân trong và lớp cây xanh được đan xen để đưa khí trời len sâu vào đời sống hằng ngày.",
-      "href": "#",
-      "mobile": {
-        "title": "Breath Villa",
-        "subtitle": "Lắng nghe những nhịp chậm",
-        "category": "Biệt thự",
-        "image": "assets/projects/04-breath-villa.svg",
-        "description": "Các khoảng thở, sân trong và lớp cây xanh được đan xen để đưa khí trời len sâu vào đời sống hằng ngày.",
-        "href": "#"
-      }
-    },
-    {
-      "chapter": "03",
       "title": "TVT Home",
       "subtitle": "Trỗi dậy và bứt phá",
       "category": "Nhà phố",
-      "image": "assets/uploads/18efdb637ec1885ba5a01ac8.jpg",
+      "image": "PROJECTS/TVT_House./F1.jpg",
       "description": "Một ngôi nhà đô thị với những khoảng mở có chủ đích, kết nối nhiều tầng sinh hoạt trong một hình khối cô đọng.",
       "href": "#",
       "mobile": {
@@ -297,11 +263,11 @@
       }
     },
     {
-      "chapter": "02",
+      "chapter": "04",
       "title": "Thu Điếu",
       "subtitle": "Nốt nhạc tĩnh của thanh âm",
       "category": "Biệt thự",
-      "image": "assets/uploads/a91170226b98441a8980cf05.jpg",
+      "image": "PROJECTS/Thu_Dieu/ExC_01.2.jpg",
       "description": "Không gian hướng đến sự tĩnh tại, nơi ánh sáng tự nhiên, mặt nước và các lớp vật liệu tạo nên nhịp điệu chậm.",
       "href": "#",
       "mobile": {
@@ -314,19 +280,53 @@
       }
     },
     {
-      "chapter": "01",
-      "title": "T&T Villa",
-      "subtitle": "Sự tương phản trong ánh nhìn",
-      "category": "Biệt thự",
-      "image": "assets/uploads/ebb7178f9e07b6d3a6db50a5.jpg",
-      "description": "Một cấu trúc sống được tổ chức bằng tương phản sáng — tối, đặc — rỗng và những khoảng chuyển tiếp mềm mại.",
+      "chapter": "03",
+      "title": "Lavender Restaurant",
+      "subtitle": "Giá trị chuyển biến",
+      "category": "Nhà hàng",
+      "image": "PROJECTS/Lavender/C8.jpg",
+      "description": "Không gian ẩm thực được xây dựng như một chuỗi chuyển cảnh, linh hoạt giữa tính riêng tư và bầu không khí cộng đồng.",
       "href": "#",
       "mobile": {
-        "title": "T&T Villa",
-        "subtitle": "Sự tương phản trong ánh nhìn",
+        "title": "Lavender Restaurant",
+        "subtitle": "Giá trị chuyển biến",
+        "category": "Nhà hàng",
+        "image": "assets/projects/08-lavender.svg",
+        "description": "Không gian ẩm thực được xây dựng như một chuỗi chuyển cảnh, linh hoạt giữa tính riêng tư và bầu không khí cộng đồng.",
+        "href": "#"
+      }
+    },
+    {
+      "chapter": "02",
+      "title": "Cù Lao Villa",
+      "subtitle": "Theo luồng cảm xúc",
+      "category": "Biệt thự",
+      "image": "PROJECTS/TranPhuong_Villa/TP-Villa_ExC_02.1.png",
+      "description": "Hành trình không gian được mở theo từng lớp cảnh quan, từ vùng đệm riêng tư đến những khoảng sinh hoạt rộng mở.",
+      "href": "#",
+      "mobile": {
+        "title": "Cù Lao Villa",
+        "subtitle": "Theo luồng cảm xúc",
         "category": "Biệt thự",
-        "image": "assets/projects/01-tt-villa.svg",
-        "description": "Một cấu trúc sống được tổ chức bằng tương phản sáng — tối, đặc — rỗng và những khoảng chuyển tiếp mềm mại.",
+        "image": "assets/projects/05-cu-lao-villa.svg",
+        "description": "Hành trình không gian được mở theo từng lớp cảnh quan, từ vùng đệm riêng tư đến những khoảng sinh hoạt rộng mở.",
+        "href": "#"
+      }
+    },
+    {
+      "chapter": "01",
+      "title": "Breath Villa",
+      "subtitle": "Lắng nghe những nhịp chậm",
+      "category": "Biệt thự",
+      "image": "PROJECTS/Chateur_QL_Villa/Chateur_ExC_02.jpg",
+      "description": "Các khoảng thở, sân trong và lớp cây xanh được đan xen để đưa khí trời len sâu vào đời sống hằng ngày.",
+      "href": "#",
+      "mobile": {
+        "title": "Breath Villa",
+        "subtitle": "Lắng nghe những nhịp chậm",
+        "category": "Biệt thự",
+        "image": "assets/projects/04-breath-villa.svg",
+        "description": "Các khoảng thở, sân trong và lớp cây xanh được đan xen để đưa khí trời len sâu vào đời sống hằng ngày.",
         "href": "#"
       }
     }
