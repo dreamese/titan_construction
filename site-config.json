@@ -250,7 +250,7 @@
       "title": "TVT Home",
       "subtitle": "Trỗi dậy và bứt phá",
       "category": "Nhà phố",
-      "image": "PROJECTS/TVT_House./F1.jpg",
+      "image": "PROJECTS/TVT_House/F1.jpg",
       "description": "Một ngôi nhà đô thị với những khoảng mở có chủ đích, kết nối nhiều tầng sinh hoạt trong một hình khối cô đọng.",
       "href": "#",
       "mobile": {
@@ -291,7 +291,7 @@
         "title": "Lavender Restaurant",
         "subtitle": "Giá trị chuyển biến",
         "category": "Nhà hàng",
-        "image": "assets/projects/08-lavender.svg",
+        "image": "PROJECTS/Lavender/C8.jpg",
         "description": "Không gian ẩm thực được xây dựng như một chuỗi chuyển cảnh, linh hoạt giữa tính riêng tư và bầu không khí cộng đồng.",
         "href": "#"
       }
